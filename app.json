@@ -49,7 +49,8 @@
     },
     "splash": {
       "image": "./assets/images/splash-screen.png",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "resizeMode": "cover"
     }
   }
 }
