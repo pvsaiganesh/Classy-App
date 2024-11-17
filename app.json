@@ -11,7 +11,17 @@
     "ios": {
       "supportsTablet": true
     },
-
+    "splash": {
+      "image": "./assets/images/splash-screen.png",
+      "resizeMode": "cover",
+      "mdpi": "./assets/splashScreen/splash-port-mdpi.png",
+      "ldpi": "./assets/splashScreen/splash-port-ldpi.png",
+      "hdpi": "./assets/splashScreen/splash-port-hdpi.png",
+      "xhdpi": "./assets/splashScreen/splash-port-xhdpi.png",
+      "xxhdpi": "./assets/splashScreen/splash-port-xxhdpi.png",
+      "xxxhdpi": "./assets/splashScreen/splash-port-xxxhdpi.png",
+      "assetBundlePatterns": ["assets/images/*", "assets/icons/*"]
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
@@ -30,8 +40,8 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-screen.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
+          "imageWidth": 600,
+          "resizeMode": "cover",
           "backgroundColor": "#ffffff"
         }
       ]
@@ -46,11 +56,6 @@
       "eas": {
         "projectId": "13719c44-9096-4923-a682-cb3966e2370f"
       }
-    },
-    "splash": {
-      "image": "./assets/images/splash-screen.png",
-      "backgroundColor": "#ffffff",
-      "resizeMode": "cover"
     }
   }
 }
