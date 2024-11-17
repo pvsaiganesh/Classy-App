@@ -27,7 +27,7 @@ SplashScreen.preventAutoHideAsync();
 //   fade: true,
 // });
 const { width, height } = Dimensions.get("window");
-export default function App() {
+export default function Onboarding() {
   const [appIsReady, setAppIsReady] = useState(false);
   const onPress = () => {};
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Link href="/onboarding">
+      <Link href="./onboarding">
         <ImageBackground
           source={require("./../assets/images/react-logo.png")} // Replace with your image path
           style={[styles.backgroundImage, { width: width, height: height }]}

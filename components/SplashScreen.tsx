@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SplashScreen = () => {
+export default function SplashScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Link href="/onboarding">
+      <Link href="./onboarding">
         <ImageBackground
           source={require("./../assets/images/splash-screen.png")} // Replace with your image path
           style={[styles.backgroundImage, { width: width, height: height }]}
@@ -29,4 +29,4 @@ export default SplashScreen = () => {
       </Link>
     </SafeAreaView>
   );
-};
+}
