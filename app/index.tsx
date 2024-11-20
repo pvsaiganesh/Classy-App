@@ -8,12 +8,12 @@ import {
   View,
 } from "react-native";
 import { Link } from "expo-router";
-// import Logo from "../assets/logo";
+import Logo from "../assets/logo";
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", alignItems: "center" },
   backgroundImage: {
-    width: "100%", // Full width
+    flex: 1, justifyContent: "center", alignItems: "center"
   },
 });
 
@@ -25,7 +25,7 @@ export default function Page() {
           source={require("./../assets/images/home-bg.png")} // Replace with your image path
           style={[styles.backgroundImage, { width: width, height: height }]}
         >
-          {/* <Logo /> */}
+          <Logo />
         </ImageBackground>
       </Link>
     </View>
