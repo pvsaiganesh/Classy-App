@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 import { Link } from "expo-router";
-
+// import Logo from "../assets/logo";
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", alignItems: "center" },
@@ -22,10 +22,10 @@ export default function Page() {
     <View style={styles.container}>
       <Link href="./onboarding">
         <ImageBackground
-          source={require("./../assets/images/splash-screen.png")} // Replace with your image path
+          source={require("./../assets/images/home-bg.png")} // Replace with your image path
           style={[styles.backgroundImage, { width: width, height: height }]}
         >
-          {/* Your other components go here */}
+          {/* <Logo /> */}
         </ImageBackground>
       </Link>
     </View>
