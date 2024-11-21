@@ -4,6 +4,7 @@ import {
   PaperProvider,
   configureFonts,
 } from "react-native-paper";
+import "../global.css";
 import { AppRegistry } from "react-native";
 // import name from "../app";
 const fontConfig = {
