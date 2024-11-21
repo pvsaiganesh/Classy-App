@@ -1,19 +1,94 @@
 import { Stack } from "expo-router";
+import {
+  MD3LightTheme as DefaultTheme,
+  PaperProvider,
+  configureFonts,
+} from "react-native-paper";
+import { AppRegistry } from "react-native";
+// import name from "../app";
+const fontConfig = {
+  web: {
+    regular: {
+      fontFamily: "urbanist",
+      fontWeight: "normal",
+    },
+    medium: {
+      fontFamily: "urbanist-medium",
+      fontWeight: "normal",
+    },
+    light: {
+      fontFamily: "urbanist-light",
+      fontWeight: "normal",
+    },
+    thin: {
+      fontFamily: "urbanist-thin",
+      fontWeight: "normal",
+    },
+  },
+  ios: {
+    regular: {
+      fontFamily: "urbanist",
+      fontWeight: "normal",
+    },
+    medium: {
+      fontFamily: "urbanist-medium",
+      fontWeight: "normal",
+    },
+    light: {
+      fontFamily: "urbanist-light",
+      fontWeight: "normal",
+    },
+    thin: {
+      fontFamily: "urbanist-thin",
+      fontWeight: "normal",
+    },
+  },
+  android: {
+    regular: {
+      fontFamily: "urbanist",
+      fontWeight: "normal",
+    },
+    medium: {
+      fontFamily: "urbanist-medium",
+      fontWeight: "normal",
+    },
+    light: {
+      fontFamily: "urbanist-light",
+      fontWeight: "normal",
+    },
+    thin: {
+      fontFamily: "urbanist-thin",
+      fontWeight: "normal",
+    },
+  },
+};
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: "#fd9829",
+    secondary: "#fff",
+  },
+  fonts: configureFonts(fontConfig),
+};
 
 export default function RootLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="index" />
-      <Stack.Screen name="onboarding" />
-      <Stack.Screen name="details" />
-    </Stack>
+    <PaperProvider theme={theme}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen name="splashscreen" />
+        <Stack.Screen name="details" />
+      </Stack>
+    </PaperProvider>
   );
 }
-
+AppRegistry.registerComponent("Classy-App", () => RootLayout);
 // import { useCallback, useEffect, useState } from "react";
 // import { Text, TouchableOpacity, View } from "react-native";
 // import Entypo from "@expo/vector-icons/Entypo";
