@@ -71,7 +71,7 @@ const theme = {
     primary: "#fd9829",
     secondary: "#fff",
   },
-  fonts: configureFonts(fontConfig),
+  // fonts: configureFonts(fontConfig),
 };
 
 export default function RootLayout() {

@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
   row: { flexDirection: "row" },
   baseText: {
     fontFamily: "mont-serrat",
+    fontSize: 24,
   },
   container: {
     flex: 1,
@@ -95,14 +96,12 @@ export default function Page() {
             </View>
           </View>
         </ImageBackground>
-        <Button mode="contained">
-          <IconButton
-            icon="camera"
-            iconColor="#ffffff"
-            size={50}
-            onPress={() => console.log("Pressed")}
-          />
-        </Button>
+        <IconButton
+          icon="camera"
+          iconColor="#ffffff"
+          size={50}
+          onPress={() => console.log("Pressed")}
+        />
       </View>
     </View>
   );
