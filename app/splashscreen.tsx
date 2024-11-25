@@ -16,12 +16,13 @@ import { Button, IconButton, MD3Colors, useTheme } from "react-native-paper";
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
   app: { flex: 1, backgroundColor: "#fff" },
-  appContainer: { flex: 1, paddingTop: 50 },
+  appContainer: { flex: 1, padding: 10, paddingTop: 50 },
   appContainer2: {
     flex: 1,
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
+    padding: 10,
   },
   row: { flexDirection: "row" },
   baseText: {
@@ -30,6 +31,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    padding: 10,
     width: "50%",
     justifyContent: "center",
     alignItems: "center",
@@ -100,7 +102,7 @@ export default function Page() {
           icon="arrow-right"
           iconColor="#ffffff"
           mode="contained"
-          size={50}
+          size={36}
           onPress={() => console.log("Pressed")}
         />
       </View>
