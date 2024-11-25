@@ -98,13 +98,15 @@ export default function Page() {
             </View>
           </View>
         </ImageBackground>
-        <IconButton
-          icon="arrow-right"
-          iconColor="#ffffff"
-          mode="contained"
-          size={36}
-          onPress={() => console.log("Pressed")}
-        />
+        <View style={{ paddingBottom: 30 }}>
+          <IconButton
+            icon="arrow-right"
+            iconColor="#ffffff"
+            mode="contained"
+            size={36}
+            onPress={() => console.log("Pressed")}
+          />
+        </View>
       </View>
     </View>
   );
