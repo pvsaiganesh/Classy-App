@@ -75,7 +75,7 @@ export default function Page() {
         </Text>
 
         <Text style={styles.textBlack}>
-          Shop
+          Shop{"  "}
           <Image
             style={styles.bgOrange}
             source={require("../assets/images/orange-text.png")}
