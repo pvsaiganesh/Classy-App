@@ -24,6 +24,7 @@ export default function Page() {
       flex: 1,
       justifyContent: "flex-start",
       alignItems: "center",
+      textAlign: "center",
     },
     skip: {
       flexDirection: "row",
@@ -45,12 +46,11 @@ export default function Page() {
       textAlign: "center",
     },
     textBlack: {
-      padding: 20,
       fontSize: 28,
       textAlign: "center",
       alignItems: "center",
     },
-    textOrange: { padding: 20, color: theme.colors.primary, fontSize: 28 },
+    textOrange: { color: theme.colors.primary, fontSize: 28 },
     bgOrange: {
       backgroundColor: theme.colors.primary,
       color: theme.colors.secondary,
@@ -74,20 +74,23 @@ export default function Page() {
           Shop <Text style={styles.textOrange}>Exciting</Text>
         </Text>
 
-        <Text style={styles.textBlack}>
-          Shop{"  "}
-          <Image
-            style={styles.bgOrange}
-            source={require("../assets/images/orange-text.png")}
-          />
-        </Text>
-
+        <Text style={styles.textBlack}>Shop{"  "}</Text>
+        <Image
+          style={{ ...styles.bgOrange, paddingTop: 30 }}
+          source={require("../assets/images/orange-text.png")}
+        />
         <Text style={styles.desc}>
           Find your daily necessities at Brand. The world's largest fashion
           e-commerce has arrived in a mobile version. Shop now!
         </Text>
-        <Button style={styles.bgOrange}>Login</Button>
-        <Button style={styles.bgOrange}>Register</Button>
+        <Button
+          mode="contained"
+          labelStyle={{ color: "white", fontSize: 16 }}
+          style={styles.bgOrange}
+        >
+          Login
+        </Button>
+        <Button labelStyle={{ color: "black", fontSize: 16 }}>Register</Button>
       </View>
     </View>
   );
