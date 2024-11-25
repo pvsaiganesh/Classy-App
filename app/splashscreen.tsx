@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   row: { flexDirection: "row" },
   baseText: {
     fontFamily: "mont-serrat",
-    fontSize: 24,
+    fontSize: 18,
   },
   container: {
     flex: 1,

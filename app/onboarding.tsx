@@ -17,7 +17,7 @@ import { OnboardingImage } from "../assets/images/onboarding-image";
 
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
-  app: { flex: 1, backgroundColor: "#fff" },
+  app: { flex: 1, backgroundColor: "#fff", padding: 50 },
   appContainer: { flex: 1, padding: 10, paddingTop: 50 },
   appContainer2: {
     flex: 1,
