@@ -9,10 +9,11 @@ import {
   Text,
   StatusBar,
 } from "react-native";
-import { Link } from "expo-router";
+import { Link, useNavigation } from "expo-router";
 // import { StatusBar } from "expo-status-bar";
 import Logo from "../assets/logo";
 import { Button, IconButton, MD3Colors, useTheme } from "react-native-paper";
+
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
   app: { flex: 1, backgroundColor: "#fff" },
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
 
 export default function Page() {
   const theme = useTheme();
+  const navigation = useNavigation();
   return (
     <View style={styles.app}>
       <ImageBackground
@@ -99,13 +101,15 @@ export default function Page() {
           </View>
         </ImageBackground>
         <View style={{ paddingBottom: 30 }}>
-          <IconButton
-            icon="arrow-right"
-            iconColor="#ffffff"
-            mode="contained"
-            size={36}
-            onPress={() => console.log("Pressed")}
-          />
+          <Link href="/onboarding">
+            <IconButton
+              icon="arrow-right"
+              iconColor="#ffffff"
+              mode="contained"
+              size={36}
+              onPress={() => console.log("Pressed")}
+            />
+          </Link>
         </View>
       </View>
     </View>
