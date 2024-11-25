@@ -97,8 +97,9 @@ export default function Page() {
           </View>
         </ImageBackground>
         <IconButton
-          icon="camera"
+          icon="arrow-right"
           iconColor="#ffffff"
+          mode="contained"
           size={50}
           onPress={() => console.log("Pressed")}
         />
