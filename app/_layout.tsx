@@ -76,7 +76,7 @@ const theme = {
     onPrimary: "#FEAD54",
     primaryContainer: "#FEAD54",
     onPrimaryContainer: "#FEAD54",
-    secondary: "#FEAD54",
+    secondary: "#FFFFFF",
     onSecondary: "#FEAD54",
     secondaryContainer: "#FEAD54",
     onSecondaryContainer: "#FEAD54",
