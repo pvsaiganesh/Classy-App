@@ -8,7 +8,8 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import Logo from "../assets/logo";
-import { Button, useTheme } from "react-native-paper";
+import { Button, TextInput, useTheme } from "react-native-paper";
+import { useState } from "react";
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "flex-start", alignItems: "center" },
@@ -49,6 +50,7 @@ export default function Page() {
     },
     container: {
       flex: 1,
+      margin: 10,
     },
     logoContainer: {
       width: width,
@@ -70,7 +72,9 @@ export default function Page() {
     },
     desc: { fontSize: 16, textAlign: "center" },
     button: { textAlign: "center", alignSelf: "stretch" },
+    input: { marginBottom: 20 },
   });
+  const [text, setText] = useState("");
 
   return (
     <View style={styles.container}>
@@ -79,6 +83,18 @@ export default function Page() {
           <Logo />
         </Link>
       </View>
+      <TextInput
+        label="Email/Phone Number"
+        value={text}
+        style={styles.input}
+        onChangeText={(text) => setText(text)}
+      />
+      <TextInput
+        label="Password"
+        style={styles.input}
+        value={text}
+        onChangeText={(text) => setText(text)}
+      />
       <Button
         mode="contained"
         labelStyle={{ color: "white", fontSize: 16 }}
