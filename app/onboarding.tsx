@@ -90,13 +90,16 @@ export default function Page() {
             Find your daily necessities at Brand. The world's largest fashion
             e-commerce has arrived in a mobile version. Shop now!
           </Text>
-          <Button
-            mode="contained"
-            labelStyle={{ color: "white", fontSize: 16 }}
-            style={{ ...styles.bgOrange, ...styles.button }}
-          >
-            Login
-          </Button>
+          <Link href="./login">
+            <Button
+              mode="contained"
+              
+              labelStyle={{ color: "white", fontSize: 16 }}
+              style={{ ...styles.bgOrange, ...styles.button }}
+            >
+              Login
+            </Button>
+          </Link>
           <Button labelStyle={{ color: "black", fontSize: 16 }}>
             Register
           </Button>
