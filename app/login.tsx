@@ -84,6 +84,7 @@ export default function Page() {
         </Link>
       </View>
       <TextInput
+        mode="outlined"
         label="Email/Phone Number"
         value={text}
         style={styles.input}
@@ -91,6 +92,7 @@ export default function Page() {
       />
       <TextInput
         label="Password"
+        mode="outlined"
         style={styles.input}
         value={text}
         onChangeText={(text) => setText(text)}
