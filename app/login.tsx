@@ -65,9 +65,9 @@ export default function Page() {
       textAlign: "center",
       alignItems: "center",
     },
-    textOrange: { color: theme.colors.primary, fontSize: 28 },
+    textOrange: { color: theme.colors.primaryContainer, fontSize: 28 },
     bgOrange: {
-      backgroundColor: theme.colors.primary,
+      backgroundColor: theme.colors.primaryContainer,
       color: theme.colors.secondary,
     },
     desc: { fontSize: 16, textAlign: "center" },
