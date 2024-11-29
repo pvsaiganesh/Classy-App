@@ -92,6 +92,7 @@ export default function Page() {
       />
       <TextInput
         label="Password"
+        secureTextEntry={true}
         mode="outlined"
         style={styles.input}
         value={text}
