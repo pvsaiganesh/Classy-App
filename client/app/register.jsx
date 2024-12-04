@@ -18,17 +18,18 @@ import {
 } from "react-native-paper";
 import { useState } from "react";
 const { width, height } = Dimensions.get("window");
-const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "flex-start", alignItems: "center" },
-  backgroundImage: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+// const styles = StyleSheet.create({
+//   container: { flex: 1, justifyContent: "flex-start", alignItems: "center" },
+//   backgroundImage: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//   },
+// });
 import { useRouter } from "expo-router";
 import ArrowLeft from "../assets/images/arrow-left";
 import { Checkbox } from "react-native-paper";
+import theme from "./theme";
 // const styles = {
 //   app: {
 //     flex: 4, // the number of columns you want to devide the screen into
@@ -86,9 +87,85 @@ import { Checkbox } from "react-native-paper";
 //     </View>
 //   );
 // }
+const styles = StyleSheet.create({
+  app: {
+    flex: 4,
+    padding: 30,
+    gap: 10,
+  },
+  row: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  skip: {
+    flexDirection: "row",
+    paddingEnd: 30,
+    fontSize: 30,
+    justifyContent: "flex-end",
+    textAlign: "right",
+  },
+  image: {
+    paddingTop: 50,
+    paddingStart: 30,
+    flex: 1,
+    textAlign: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    width: width,
+  },
+  container: {
+    margin: 30,
+  },
+  logoContainer: {
+    width: width,
+    height: height / 2,
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    //   alignItems: "flex-start",
+    //   textAlign: "start",
+  },
+  textBlack: {
+    fontSize: 28,
+    textAlign: "center",
+    alignItems: "center",
+  },
+  textHeading: {
+    fontFamily: "urbanist",
+    fontSize: 36,
+    fontWeight: 600,
+    lineHeight: 36,
+    textAlign: "left",
+    // text-underline-position: from-font;
+    // text-decoration-skip-ink: none;
+  },
+  textOrange: { color: theme.colors.primaryContainer, fontSize: 28 },
+  bgOrange: {
+    backgroundColor: theme.colors.primaryContainer,
+    color: theme.colors.secondary,
+  },
+  desc: { fontSize: 16, textAlign: "center" },
+  button: { textAlign: "center", alignSelf: "stretch" },
+  input: { marginBottom: 20, width: "45%" },
+  "1col": {
+    flex: 1,
+  },
+  "2col": {
+    flex: 2,
+  },
+  "3col": {
+    flex: 3,
+  },
+  "4col": {
+    flex: 4,
+  },
+});
+const Col = ({ numRows, children }) => {
+  return <View style={styles[`${numRows}col`]}>{children}</View>;
+};
 
+const Row = ({ children }) => <View style={styles.row}>{children}</View>;
 export default function Page() {
-  const theme = useTheme();
   const router = useRouter();
 
   const [checked, setChecked] = useState(false);
@@ -99,84 +176,6 @@ export default function Page() {
   const [password, setPassword] = useState("");
   const [secureTextEntry, setSecureTextEntry] = useState(false);
 
-  const styles = StyleSheet.create({
-    app: {
-      flex: 4,
-      padding: 30,
-      gap: 10,
-    },
-    row: {
-      flexDirection: "row",
-      gap: 10,
-    },
-    skip: {
-      flexDirection: "row",
-      paddingEnd: 30,
-      fontSize: 30,
-      justifyContent: "flex-end",
-      textAlign: "right",
-    },
-    image: {
-      paddingTop: 50,
-      paddingStart: 30,
-      flex: 1,
-      textAlign: "center",
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      width: width,
-    },
-    container: {
-      margin: 30,
-    },
-    logoContainer: {
-      width: width,
-      height: height / 2,
-      flexDirection: "column",
-      justifyContent: "flex-start",
-      //   alignItems: "flex-start",
-      //   textAlign: "start",
-    },
-    textBlack: {
-      fontSize: 28,
-      textAlign: "center",
-      alignItems: "center",
-    },
-    textHeading: {
-      fontFamily: "urbanist",
-      fontSize: 36,
-      fontWeight: 600,
-      lineHeight: 36,
-      textAlign: "left",
-      // text-underline-position: from-font;
-      // text-decoration-skip-ink: none;
-    },
-    textOrange: { color: theme.colors.primaryContainer, fontSize: 28 },
-    bgOrange: {
-      backgroundColor: theme.colors.primaryContainer,
-      color: theme.colors.secondary,
-    },
-    desc: { fontSize: 16, textAlign: "center" },
-    button: { textAlign: "center", alignSelf: "stretch" },
-    input: { marginBottom: 20, width: "45%" },
-    "1col": {
-      flex: 1,
-    },
-    "2col": {
-      flex: 2,
-    },
-    "3col": {
-      flex: 3,
-    },
-    "4col": {
-      flex: 4,
-    },
-  });
-  const Col = ({ numRows, children }) => {
-    return <View style={styles[`${numRows}col`]}>{children}</View>;
-  };
-
-  const Row = ({ children }) => <View style={styles.row}>{children}</View>;
   return (
     <View style={styles.app}>
       <Row>
@@ -241,7 +240,7 @@ export default function Page() {
               />
             }
             // keyboardShouldPersistTaps="handled"
-            onChangeText={(password) => setPhoneNumber(password)}
+            onChangeText={(password) => setPassword(password)}
           />
         </Col>
       </Row>
@@ -252,7 +251,7 @@ export default function Page() {
             mode="outlined"
             value={phoneNumber}
             outlineColor="#FFFFFF"
-            onChangeText={(phoneNumber) => setPassword(phoneNumber)}
+            onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)}
           />
         </Col>
       </Row>

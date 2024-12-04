@@ -3,6 +3,7 @@ import {
   PaperProvider,
   configureFonts,
 } from "react-native-paper";
+
 const fontConfig = {
   web: {
     regular: {
