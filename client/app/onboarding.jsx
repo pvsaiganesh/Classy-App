@@ -9,11 +9,11 @@ import {
   Text,
 } from "react-native";
 import { Link, useNavigation, useRouter } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 import Logo from "../assets/logo.jsx";
 import { Button, IconButton, MD3Colors, useTheme } from "react-native-paper";
 import { OnboardingImage } from "../assets/images/onboarding-image.jsx";
 import theme from "./theme";
+import { StatusBar } from "expo-status-bar";
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
   app: {
@@ -89,6 +89,7 @@ export default function Page() {
 
   return (
     <View style={styles.app}>
+      <StatusBar hidden animated={true} />
       <Row>
         <Text
           onPress={() => {

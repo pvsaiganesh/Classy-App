@@ -18,7 +18,7 @@ import {
 import { useState } from "react";
 const { width, height } = Dimensions.get("window");
 import { theme } from "./theme";
-
+import { StatusBar } from "expo-status-bar";
 // const styles = StyleSheet.create({
 //   container: { flex: 1, justifyContent: "flex-start", alignItems: "center" },
 //   backgroundImage: {
@@ -89,9 +89,9 @@ const styles = StyleSheet.create({
   app: {
     // flex: 1,
     flex: 4,
-    margin: 30,
-    paddingTop: 50,
+    padding: 30,
     gap: 10,
+    marginTop: 30,
   },
   row: {
     flexDirection: "row",
@@ -121,6 +121,12 @@ export default function Page() {
 
   return (
     <View style={styles.app}>
+      <StatusBar
+        style="dark"
+        hidden={false}
+        animated={true}
+        backgroundColor={theme.colors.primary}
+      />
       <Row
         style={{
           justifyContent: "center",
@@ -129,7 +135,13 @@ export default function Page() {
         }}
       >
         <Col numRows={2}>
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              height: height / 3,
+            }}
+          >
             <Link href="./splashscreen">
               <Logo />
             </Link>

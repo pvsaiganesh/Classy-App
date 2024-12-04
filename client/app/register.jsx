@@ -30,6 +30,7 @@ import { useRouter } from "expo-router";
 import ArrowLeft from "../assets/images/arrow-left";
 import { Checkbox } from "react-native-paper";
 import theme from "./theme";
+import { StatusBar } from "expo-status-bar";
 // const styles = {
 //   app: {
 //     flex: 4, // the number of columns you want to devide the screen into
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
   app: {
     flex: 4,
     padding: 30,
+    marginTop: 30,
     gap: 10,
   },
   row: {
@@ -178,6 +180,12 @@ export default function Page() {
 
   return (
     <View style={styles.app}>
+      <StatusBar
+        hidden={false}
+        style="dark"
+        animated={true}
+        backgroundColor={theme.colors.primary}
+      />
       <Row>
         <Col numRows={4}>
           <IconButton

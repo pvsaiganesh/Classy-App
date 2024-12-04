@@ -50,6 +50,7 @@ export default function Page() {
   const navigation = useNavigation();
   return (
     <View style={styles.app}>
+      <StatusBar hidden animated={true} />
       <ImageBackground
         source={require("./../assets/images/onboarding-bg-1.png")} // Replace with your image path
         style={[styles.backgroundImage, { width: width, height: height / 2 }]}
