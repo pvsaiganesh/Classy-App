@@ -107,8 +107,9 @@ export default function Page() {
     app: {
       // flex: 1,
       flex: 4,
-      margin: 30,
-      paddingTop: 50,
+      // margin: 0,
+      padding: 30,
+      // paddingTop: 50,
       gap: 10,
     },
     row: {
@@ -181,15 +182,19 @@ export default function Page() {
   return (
     <View style={styles.app}>
       <Row>
-        <IconButton
-          onPress={() => {
-            router.push("/login");
-          }}
-          icon="arrow-left"
-        />
+        <Col numRows={4}>
+          <IconButton
+            onPress={() => {
+              router.push("/login");
+            }}
+            icon="arrow-left"
+          />
+        </Col>
       </Row>
       <Row>
-        <Text style={{ fontSize: 50 }}>Let’s create your account.</Text>
+        <Col numRows={4}>
+          <Text style={{ fontSize: 50 }}>Let’s create your account.</Text>
+        </Col>
       </Row>
       <Row>
         <Col numRows={2}>

@@ -121,11 +121,19 @@ export default function Page() {
 
   return (
     <View style={styles.app}>
-      <Row style={{ justifyContent: "center", alignItems: "center" }}>
-        <Col>
-          <Link href="./splashscreen">
-            <Logo />
-          </Link>
+      <Row
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          alignSelf: "stretch", // Optional, remove if not needed
+        }}
+      >
+        <Col numRows={2}>
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <Link href="./splashscreen">
+              <Logo />
+            </Link>
+          </View>
         </Col>
       </Row>
 
