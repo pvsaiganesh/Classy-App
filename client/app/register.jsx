@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
 });
 import { useRouter } from "expo-router";
 import ArrowLeft from "../assets/images/arrow-left";
+import { Checkbox } from "react-native-paper";
 // const styles = {
 //   app: {
 //     flex: 4, // the number of columns you want to devide the screen into
@@ -86,7 +87,7 @@ export default function Page() {
   };
 
   const Row = ({ children }) => <View style={styles.row}>{children}</View>;
-
+  const [checked, setChecked] = useState(false);
   const [emailPhone, setEmailPhone] = useState("");
   const [password, setPassword] = useState("");
   const styles = StyleSheet.create({
@@ -227,6 +228,21 @@ export default function Page() {
             outlineColor="#FFFFFF"
             onChangeText={(text) => setPassword(text)}
           />
+        </Col>
+      </Row>
+      <Row>
+        <Col numRows={4}>
+          <Row>
+            <Checkbox
+              status={checked ? "checked" : "unchecked"}
+              onPress={() => {
+                setChecked(!checked);
+              }}
+            />
+            <Text style={{ alignSelf: "center" }}>
+              I agree to Privacy Policy and Terms of Use
+            </Text>
+          </Row>
         </Col>
       </Row>
 
