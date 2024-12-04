@@ -8,7 +8,13 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import Logo from "../assets/logo";
-import { Button, Text, TextInput, useTheme } from "react-native-paper";
+import {
+  Button,
+  IconButton,
+  Text,
+  TextInput,
+  useTheme,
+} from "react-native-paper";
 import { useState } from "react";
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
@@ -168,7 +174,12 @@ export default function Page() {
   return (
     <View style={styles.app}>
       <Row>
-        <ArrowLeft />
+        <IconButton
+          onPress={() => {
+            router.push("/login");
+          }}
+          icon="arrow-left"
+        />
       </Row>
       <Row>
         <Text>Let’s create your account.</Text>
