@@ -100,7 +100,7 @@ export default function Page() {
     app: {
       // flex: 1,
       flex: 4,
-      marginHorizontal: "auto",
+      margin: 30,
       paddingTop: 50,
       gap: 10,
     },
