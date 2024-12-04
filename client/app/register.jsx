@@ -281,15 +281,7 @@ export default function Page() {
         labelStyle={{ color: "white", fontSize: 16 }}
         style={{ ...styles.bgOrange, ...styles.button }}
       >
-        Login
-      </Button>
-      <Button
-        onPress={() => {
-          router.push("/register");
-        }}
-        labelStyle={{ color: "black", fontSize: 16 }}
-      >
-        Register
+        Create Account
       </Button>
     </View>
   );

@@ -89,7 +89,7 @@ export default function Page() {
 
   return (
     <View style={styles.app}>
-      <Row style={{ alignSelf: "end" }}>
+      <Row>
         <Text
           onPress={() => {
             router.push("/login");
@@ -131,15 +131,16 @@ export default function Page() {
       </Row>
       <Row>
         <Col numRows={4}>
-          <Link href="./login">
-            <Button
-              mode="contained"
-              labelStyle={{ color: "white", fontSize: 16 }}
-              style={{ ...styles.bgOrange, ...styles.button }}
-            >
-              Login
-            </Button>
-          </Link>
+          <Button
+            mode="contained"
+            onPress={() => {
+              router.push("/login");
+            }}
+            labelStyle={{ color: "white", fontSize: 16 }}
+            style={{ ...styles.bgOrange, ...styles.button }}
+          >
+            Login
+          </Button>
         </Col>
       </Row>
       <Row>
