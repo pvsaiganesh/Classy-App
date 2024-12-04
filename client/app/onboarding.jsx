@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
     flex: 4,
     padding: 30,
     gap: 10,
+    justifyContent: "center",
+    alignItems: "center",
   },
   row: {
     flexDirection: "row",
@@ -97,8 +99,8 @@ export default function Page() {
         </Text>
       </Row>
       <Row>
-        <View style={{ height: height / 3, width: width / 3 }}>
-          <OnboardingImage style={{ flex: 1 }} />
+        <View style={{ height: height / 2, width: width / 2, flex: 1 }}>
+          <OnboardingImage />
         </View>
       </Row>
       <Row>
@@ -139,6 +141,8 @@ export default function Page() {
             </Button>
           </Link>
         </Col>
+      </Row>
+      <Row>
         <Col numRows={4}>
           <Button labelStyle={{ color: "black", fontSize: 16 }}>
             Register
