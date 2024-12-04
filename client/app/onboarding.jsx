@@ -52,16 +52,16 @@ const styles = StyleSheet.create({
   //   textAlign: "center",
   // },
   textBlack: {
-    fontSize: 28,
+    fontSize: 16,
     textAlign: "center",
     alignItems: "center",
   },
-  textOrange: { color: theme.colors.primaryContainer, fontSize: 28 },
+  textOrange: { color: theme.colors.primaryContainer, fontSize: 16 },
   bgOrange: {
     backgroundColor: theme.colors.primaryContainer,
     color: theme.colors.secondary,
   },
-  desc: { fontSize: 16, textAlign: "center" },
+  desc: { fontSize: 8, textAlign: "center" },
   button: { textAlign: "center", alignSelf: "stretch" },
   "1col": {
     flex: 1,
@@ -90,7 +90,7 @@ export default function Page() {
   return (
     <View style={styles.app}>
       <StatusBar hidden animated={true} />
-      <Row>
+      <Row style={{ textAlign: "end" }}>
         <Text
           onPress={() => {
             router.push("/login");
@@ -146,7 +146,12 @@ export default function Page() {
       </Row>
       <Row>
         <Col numRows={4}>
-          <Button labelStyle={{ color: "black", fontSize: 16 }}>
+          <Button
+            onPress={() => {
+              router.push("/register");
+            }}
+            labelStyle={{ color: "black", fontSize: 16 }}
+          >
             Register
           </Button>
         </Col>

@@ -9,6 +9,8 @@ import {
 import { Link } from "expo-router";
 import Logo from "../assets/logo";
 const { width, height } = Dimensions.get("window");
+import { StatusBar } from "expo-status-bar";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -25,6 +27,7 @@ const styles = StyleSheet.create({
 export default function Page() {
   return (
     <View style={styles.container}>
+      <StatusBar hidden animated={true} />
       <Link href="./splashscreen">
         <ImageBackground
           source={require("./../assets/images/home-bg.png")} // Replace with your image path
