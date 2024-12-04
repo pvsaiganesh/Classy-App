@@ -11,12 +11,12 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "app/_layout.tsx",
+    "app/_layout.jsx",
     "nativewind-env.d.ts",
     "assets/logo.jsx",
     "assets/images/onboarding-image.jsx",
-    "app/register.tsx",
-    "app/login.tsx",
-    "app/onboarding.tsx"
-, "app/splashscreen.tsx", "app/index.tsx"  ]
+    "app/register.jsx",
+    "app/login.jsx",
+    "app/onboarding.jsx"
+, "app/splashscreen.jsx", "app/index.jsx", "app/+not-found.jsx", "app/details.jsx"  ]
 }
