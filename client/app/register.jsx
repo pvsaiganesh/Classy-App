@@ -92,12 +92,12 @@ export default function Page() {
   const router = useRouter();
 
   const [checked, setChecked] = useState(false);
-  const [emailPhone, setEmailPhone] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
+  const [secureTextEntry, setSecureTextEntry] = useState(false);
 
   const styles = StyleSheet.create({
     app: {
@@ -200,17 +200,17 @@ export default function Page() {
             mode="outlined"
             label="First Name"
             outlineColor="#FFFFFF"
-            value={emailPhone}
-            onChangeText={(emailPhone) => setEmailPhone(emailPhone)}
+            value={firstName}
+            onChangeText={(firstName) => setFirstName(firstName)}
           />
         </Col>
         <Col numRows={2}>
           <TextInput
             label="Last Name"
             mode="outlined"
-            value={password}
+            value={lastName}
             outlineColor="#FFFFFF"
-            onChangeText={(text) => setPassword(text)}
+            onChangeText={(lastName) => setLastName(lastName)}
           />
         </Col>
       </Row>
@@ -219,9 +219,9 @@ export default function Page() {
           <TextInput
             label="Email"
             mode="outlined"
-            value={password}
+            value={email}
             outlineColor="#FFFFFF"
-            onChangeText={(text) => setPassword(text)}
+            onChangeText={(email) => setEmail(email)}
           />
         </Col>
       </Row>
@@ -229,11 +229,19 @@ export default function Page() {
         <Col numRows={4}>
           <TextInput
             label="Password"
-            secureTextEntry={true}
+            secureTextEntry={secureTextEntry}
             mode="outlined"
+            // style={styles.input}
             value={password}
             outlineColor="#FFFFFF"
-            onChangeText={(text) => setPassword(text)}
+            right={
+              <TextInput.Icon
+                icon={secureTextEntry ? "eye" : "eye-off"}
+                onPress={() => setSecureTextEntry(!secureTextEntry)}
+              />
+            }
+            // keyboardShouldPersistTaps="handled"
+            onChangeText={(password) => setPhoneNumber(password)}
           />
         </Col>
       </Row>
@@ -242,9 +250,9 @@ export default function Page() {
           <TextInput
             label="Phone Number"
             mode="outlined"
-            value={password}
+            value={phoneNumber}
             outlineColor="#FFFFFF"
-            onChangeText={(text) => setPassword(text)}
+            onChangeText={(phoneNumber) => setPassword(phoneNumber)}
           />
         </Col>
       </Row>
