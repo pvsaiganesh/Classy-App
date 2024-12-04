@@ -86,11 +86,7 @@ import { Checkbox } from "react-native-paper";
 //     </View>
 //   );
 // }
-const Col = ({ numRows, children }) => {
-  return <View style={styles[`${numRows}col`]}>{children}</View>;
-};
 
-const Row = ({ children }) => <View style={styles.row}>{children}</View>;
 export default function Page() {
   const theme = useTheme();
   const router = useRouter();
@@ -105,11 +101,8 @@ export default function Page() {
 
   const styles = StyleSheet.create({
     app: {
-      // flex: 1,
       flex: 4,
-      // margin: 0,
       padding: 30,
-      // paddingTop: 50,
       gap: 10,
     },
     row: {
@@ -179,6 +172,11 @@ export default function Page() {
       flex: 4,
     },
   });
+  const Col = ({ numRows, children }) => {
+    return <View style={styles[`${numRows}col`]}>{children}</View>;
+  };
+
+  const Row = ({ children }) => <View style={styles.row}>{children}</View>;
   return (
     <View style={styles.app}>
       <Row>
