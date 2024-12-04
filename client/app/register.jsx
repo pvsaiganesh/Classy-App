@@ -182,7 +182,7 @@ export default function Page() {
         />
       </Row>
       <Row>
-        <Text>Let’s create your account.</Text>
+        <Text style={{ fontSize: 50 }}>Let’s create your account.</Text>
       </Row>
       <Row>
         <Col numRows={2}>

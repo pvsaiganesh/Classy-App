@@ -8,9 +8,9 @@ import {
   View,
   Text,
 } from "react-native";
-import { Link, useNavigation } from "expo-router";
+import { Link, useNavigation, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import Logo from "../assets/logo";
+import Logo from "../assets/logo.jsx";
 import { Button, IconButton, MD3Colors, useTheme } from "react-native-paper";
 import { OnboardingImage } from "../assets/images/onboarding-image.jsx";
 
@@ -18,7 +18,8 @@ const { width, height } = Dimensions.get("window");
 
 export default function Page() {
   const theme = useTheme();
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
+  const router = useRouter();
   const styles = StyleSheet.create({
     app: {
       flex: 1,
@@ -69,7 +70,13 @@ export default function Page() {
       <StatusBar />
       <View>
         <View style={styles.skip}>
-          <Text>Skip</Text>
+          <Text
+            onPress={() => {
+              router.push("/login");
+            }}
+          >
+            Skip
+          </Text>
         </View>
         <View style={[styles.image, { width: width, height: height / 2 }]}>
           <OnboardingImage />
