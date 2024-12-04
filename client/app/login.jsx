@@ -113,13 +113,17 @@ export default function Page() {
     return <View style={styles[`${numRows}col`]}>{children}</View>;
   };
 
-  const Row = ({ children }) => <View style={styles.row}>{children}</View>;
+  const Row = ({ children, style }) => (
+    <View style={{ ...styles.row, ...style }}>{children}</View>
+  );
   return (
     <View style={styles.app}>
-      <Row>
-        <Link href="./splashscreen">
-          <Logo />
-        </Link>
+      <Row style={{ justifyContent: "center", alignItems: "center" }}>
+        <Col>
+          <Link href="./splashscreen">
+            <Logo />
+          </Link>
+        </Col>
       </Row>
 
       <Row>
@@ -164,23 +168,27 @@ export default function Page() {
       </Row>
 
       <Row>
-        <Button
-          mode="contained"
-          labelStyle={{ color: "white", fontSize: 16 }}
-          style={{ ...styles.bgOrange, ...styles.button }}
-        >
-          Login
-        </Button>
+        <Col numRows={4}>
+          <Button
+            mode="contained"
+            labelStyle={{ color: "white", fontSize: 16 }}
+            style={{ ...styles.bgOrange, ...styles.button }}
+          >
+            Login
+          </Button>
+        </Col>
       </Row>
       <Row>
-        <Button
-          onPress={() => {
-            router.push("/register");
-          }}
-          labelStyle={{ color: "black", fontSize: 16 }}
-        >
-          Register
-        </Button>
+        <Col numRows={4}>
+          <Button
+            onPress={() => {
+              router.push("/register");
+            }}
+            labelStyle={{ color: "black", fontSize: 16 }}
+          >
+            Register
+          </Button>
+        </Col>
       </Row>
     </View>
   );
