@@ -89,7 +89,7 @@ export default function Page() {
 
   return (
     <View style={styles.app}>
-      <Row style={{ justifyContent: "end" }}>
+      <Row style={{ alignSelf: "end" }}>
         <Text
           onPress={() => {
             router.push("/login");
