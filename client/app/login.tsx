@@ -19,9 +19,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+import { useRouter } from "expo-router";
 
 export default function Page() {
   const theme = useTheme();
+  const router = useRouter();
 
   const styles = StyleSheet.create({
     app: {
@@ -50,7 +52,7 @@ export default function Page() {
     },
     container: {
       flex: 1,
-      margin: 10,
+      margin: 30,
     },
     logoContainer: {
       width: width,
@@ -74,7 +76,8 @@ export default function Page() {
     button: { textAlign: "center", alignSelf: "stretch" },
     input: { marginBottom: 20 },
   });
-  const [text, setText] = useState("");
+  const [emailPhone, setEmailPhone] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <View style={styles.container}>
@@ -86,17 +89,19 @@ export default function Page() {
       <TextInput
         mode="outlined"
         label="Email/Phone Number"
-        value={text}
+        outlineColor="#FFFFFF"
+        value={emailPhone}
         style={styles.input}
-        onChangeText={(text) => setText(text)}
+        onChangeText={(emailPhone) => setEmailPhone(emailPhone)}
       />
       <TextInput
         label="Password"
         secureTextEntry={true}
         mode="outlined"
         style={styles.input}
-        value={text}
-        onChangeText={(text) => setText(text)}
+        value={password}
+        outlineColor="#FFFFFF"
+        onChangeText={(text) => setPassword(text)}
       />
       <Button
         mode="contained"
@@ -105,7 +110,14 @@ export default function Page() {
       >
         Login
       </Button>
-      <Button labelStyle={{ color: "black", fontSize: 16 }}>Register</Button>
+      <Button
+        onPress={() => {
+          router.push("/register");
+        }}
+        labelStyle={{ color: "black", fontSize: 16 }}
+      >
+        Register
+      </Button>
     </View>
   );
 }

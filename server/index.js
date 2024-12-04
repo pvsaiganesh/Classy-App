@@ -44,6 +44,7 @@ app.use(cors());
 const uri = `mongodb+srv://ipvsaiganesh:${encodeURIComponent(
   "Sairam@rjss12"
 )}@biziknitcluster.qi4id.mongodb.net/?retryWrites=true&w=majority&appName=BiziknitCLuster`;
+
 mongoose.connect(uri);
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 // const client = new MongoClient(uri, {
