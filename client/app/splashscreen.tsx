@@ -16,7 +16,7 @@ import { Button, IconButton, MD3Colors, useTheme } from "react-native-paper";
 
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
-  app: { flex: 1, backgroundColor: "#fff", margin: 30 },
+  app: { flex: 1, backgroundColor: "#fff" },
   appContainer: { flex: 1, padding: 10, paddingTop: 50 },
   appContainer2: {
     flex: 1,

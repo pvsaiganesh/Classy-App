@@ -5,6 +5,7 @@ import {
   ImageBackground,
   Dimensions,
   View,
+  TouchableOpacity,
 } from "react-native";
 import { Link } from "expo-router";
 import Logo from "../assets/logo";
@@ -85,17 +86,23 @@ import { Checkbox } from "react-native-paper";
 //     </View>
 //   );
 // }
+const Col = ({ numRows, children }) => {
+  return <View style={styles[`${numRows}col`]}>{children}</View>;
+};
+
+const Row = ({ children }) => <View style={styles.row}>{children}</View>;
 export default function Page() {
   const theme = useTheme();
   const router = useRouter();
-  const Col = ({ numRows, children }) => {
-    return <View style={styles[`${numRows}col`]}>{children}</View>;
-  };
 
-  const Row = ({ children }) => <View style={styles.row}>{children}</View>;
   const [checked, setChecked] = useState(false);
   const [emailPhone, setEmailPhone] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
+
   const styles = StyleSheet.create({
     app: {
       // flex: 1,
@@ -197,7 +204,6 @@ export default function Page() {
         <Col numRows={2}>
           <TextInput
             label="Last Name"
-            secureTextEntry={true}
             mode="outlined"
             value={password}
             outlineColor="#FFFFFF"
@@ -209,7 +215,6 @@ export default function Page() {
         <Col numRows={4}>
           <TextInput
             label="Email"
-            secureTextEntry={true}
             mode="outlined"
             value={password}
             outlineColor="#FFFFFF"
@@ -233,7 +238,6 @@ export default function Page() {
         <Col numRows={4}>
           <TextInput
             label="Phone Number"
-            secureTextEntry={true}
             mode="outlined"
             value={password}
             outlineColor="#FFFFFF"
@@ -243,17 +247,22 @@ export default function Page() {
       </Row>
       <Row>
         <Col numRows={4}>
-          <Row>
-            <Checkbox
-              status={checked ? "checked" : "unchecked"}
-              onPress={() => {
-                setChecked(!checked);
-              }}
-            />
-            <Text style={{ alignSelf: "center" }}>
-              I agree to Privacy Policy and Terms of Use
-            </Text>
-          </Row>
+          <TouchableOpacity
+            style={{ flexDirection: "row", alignItems: "center" }}
+            onPress={() => setChecked(!checked)}
+          >
+            <Row>
+              <Checkbox
+                status={checked ? "checked" : "unchecked"}
+                onPress={() => {
+                  setChecked(!checked);
+                }}
+              />
+              <Text style={{ alignSelf: "center" }}>
+                I agree to Privacy Policy and Terms of Use
+              </Text>
+            </Row>
+          </TouchableOpacity>
         </Col>
       </Row>
 

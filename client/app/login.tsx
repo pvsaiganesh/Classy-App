@@ -17,105 +17,108 @@ import {
 } from "react-native-paper";
 import { useState } from "react";
 const { width, height } = Dimensions.get("window");
+import { theme } from "./theme";
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1, justifyContent: "flex-start", alignItems: "center" },
+//   backgroundImage: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//   },
+// });
+import { useRouter } from "expo-router";
+const Col = ({ numRows = 4, children }) => {
+  return <View style={styles[`${numRows}col`]}>{children}</View>;
+};
+
+const Row = ({ children, style = {} }) => (
+  <View style={{ ...styles.row, ...style }}>{children}</View>
+);
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "flex-start", alignItems: "center" },
-  backgroundImage: {
+  // app: {
+  //   flex: 1,
+  //   justifyContent: "flex-start",
+  //   alignItems: "flex-end",
+  //   textAlign: "center",
+  //   paddingTop: 50,
+  //   margin: 30,
+  // },
+  skip: {
+    flexDirection: "row",
+    paddingEnd: 30,
+    fontSize: 30,
+    justifyContent: "flex-end",
+    textAlign: "right",
+  },
+  image: {
+    paddingTop: 50,
+    paddingStart: 30,
     flex: 1,
+    textAlign: "center",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    width: width,
+  },
+  container: {
+    flex: 1,
+    margin: 30,
+  },
+  logoContainer: {
+    width: width,
+    height: height / 2,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+  },
+  textBlack: {
+    fontSize: 28,
+    textAlign: "center",
+    alignItems: "center",
+  },
+  textOrange: { color: theme.colors.primaryContainer, fontSize: 28 },
+  bgOrange: {
+    backgroundColor: theme.colors.primaryContainer,
+    color: theme.colors.secondary,
+  },
+  desc: { fontSize: 16, textAlign: "center" },
+  button: { textAlign: "center", alignSelf: "stretch" },
+  input: { marginBottom: 20 },
+  app: {
+    // flex: 1,
+    flex: 4,
+    margin: 30,
+    paddingTop: 50,
+    gap: 10,
+  },
+  row: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  "1col": {
+    flex: 1,
+  },
+  "2col": {
+    flex: 2,
+  },
+  "3col": {
+    flex: 3,
+  },
+  "4col": {
+    flex: 4,
   },
 });
-import { useRouter } from "expo-router";
-
 export default function Page() {
   const theme = useTheme();
   const router = useRouter();
   const [checked, setChecked] = useState(false);
 
-  const styles = StyleSheet.create({
-    // app: {
-    //   flex: 1,
-    //   justifyContent: "flex-start",
-    //   alignItems: "flex-end",
-    //   textAlign: "center",
-    //   paddingTop: 50,
-    //   margin: 30,
-    // },
-    skip: {
-      flexDirection: "row",
-      paddingEnd: 30,
-      fontSize: 30,
-      justifyContent: "flex-end",
-      textAlign: "right",
-    },
-    image: {
-      paddingTop: 50,
-      paddingStart: 30,
-      flex: 1,
-      textAlign: "center",
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      width: width,
-    },
-    container: {
-      flex: 1,
-      margin: 30,
-    },
-    logoContainer: {
-      width: width,
-      height: height / 2,
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
-    },
-    textBlack: {
-      fontSize: 28,
-      textAlign: "center",
-      alignItems: "center",
-    },
-    textOrange: { color: theme.colors.primaryContainer, fontSize: 28 },
-    bgOrange: {
-      backgroundColor: theme.colors.primaryContainer,
-      color: theme.colors.secondary,
-    },
-    desc: { fontSize: 16, textAlign: "center" },
-    button: { textAlign: "center", alignSelf: "stretch" },
-    input: { marginBottom: 20 },
-    app: {
-      // flex: 1,
-      flex: 4,
-      margin: 30,
-      paddingTop: 50,
-      gap: 10,
-    },
-    row: {
-      flexDirection: "row",
-      gap: 10,
-    },
-    "1col": {
-      flex: 1,
-    },
-    "2col": {
-      flex: 2,
-    },
-    "3col": {
-      flex: 3,
-    },
-    "4col": {
-      flex: 4,
-    },
-  });
   const [emailPhone, setEmailPhone] = useState("");
   const [password, setPassword] = useState("");
-  const Col = ({ numRows, children }) => {
-    return <View style={styles[`${numRows}col`]}>{children}</View>;
-  };
+  const [secureTextEntry, setSecureTextEntry] = useState(false);
 
-  const Row = ({ children, style }) => (
-    <View style={{ ...styles.row, ...style }}>{children}</View>
-  );
   return (
     <View style={styles.app}>
       <Row style={{ justifyContent: "center", alignItems: "center" }}>
@@ -142,12 +145,19 @@ export default function Page() {
         <Col numRows={4}>
           <TextInput
             label="Password"
-            secureTextEntry={true}
+            secureTextEntry={secureTextEntry}
             mode="outlined"
             style={styles.input}
             value={password}
             outlineColor="#FFFFFF"
-            onChangeText={(text) => setPassword(text)}
+            right={
+              <TextInput.Icon
+                icon={secureTextEntry ? "eye" : "eye-off"}
+                onPress={() => setSecureTextEntry(!secureTextEntry)}
+              />
+            }
+            // keyboardShouldPersistTaps="handled"
+            onChangeText={(password) => setPassword(password)}
           />
         </Col>
       </Row>
