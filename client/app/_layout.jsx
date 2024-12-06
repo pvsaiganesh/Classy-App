@@ -1,23 +1,35 @@
 import { Stack } from "expo-router";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 import "../global.css";
 import { AppRegistry } from "react-native";
 // import name from "../app";
 import { theme } from "./theme";
 import { PaperProvider } from "react-native-paper";
+
+const queryClient = new QueryClient();
+
 export default function RootLayout() {
   return (
     <PaperProvider theme={theme}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="index" />
-        <Stack.Screen name="splashscreen" />
-        <Stack.Screen name="details" />
-        <Stack.Screen name="onboarding" />
-        <Stack.Screen name="login" />
-      </Stack>
+      <QueryClientProvider client={queryClient}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="index" />
+          <Stack.Screen name="splashscreen" />
+          <Stack.Screen name="details" />
+          <Stack.Screen name="onboarding" />
+          <Stack.Screen name="login" />
+        </Stack>
+      </QueryClientProvider>
     </PaperProvider>
   );
 }
