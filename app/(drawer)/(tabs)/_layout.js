@@ -11,6 +11,8 @@ import {
   Text,
 } from "react-native-paper";
 import Winner from "../../../assets/images/Winner";
+import Coupon from "../../../assets/images/Coupon";
+import ProfileIcon from "../../../assets/images/Profile";
 export default function TabLayout() {
   return (
     <Tabs
@@ -49,45 +51,26 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="draw"
+        tabBarButton={(props) => (
+          <TouchableOpacity style={{ paddingTop: 30 }} {...props} />
+        )}
         options={{
           title: "Draw",
-          tabBarIcon: ({ color }) => <Winner />,
+          tabBarIcon: ({ color }) => <Winner color={color} />,
         }}
       />
       <Tabs.Screen
         name="coupons"
         options={{
           title: "Coupons",
-          tabBarIcon: ({ color }) => (
-            <IconButton
-              icon="arrow-right"
-              onPressIn={() => {
-                router.push("/onboarding");
-              }}
-              iconColor={color}
-              mode="contained"
-              size={36}
-              onPress={() => console.log("Pressed")}
-            />
-          ),
+          tabBarIcon: ({ color }) => <Coupon color={color} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => (
-            <IconButton
-              icon="arrow-right"
-              onPressIn={() => {
-                router.push("/onboarding");
-              }}
-              iconColor={color}
-              mode="contained"
-              size={36}
-              onPress={() => console.log("Pressed")}
-            />
-          ),
+          tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
         }}
       />
     </Tabs>

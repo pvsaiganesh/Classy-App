@@ -1,5 +1,6 @@
 import * as React from "react";
 import Svg, { Path, Defs, Pattern, Use, Image } from "react-native-svg";
+import theme from "../../app/theme";
 
 const Winner = (props) => (
   <Svg
