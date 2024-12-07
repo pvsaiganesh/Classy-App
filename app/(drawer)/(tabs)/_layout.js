@@ -21,9 +21,13 @@ export default function TabLayout() {
         tabBarInactiveTintColor: theme.colors.grey, // Inactive tab icon/text color
         tabBarStyle: {
           backgroundColor: theme.colors.onPrimary, // Tab bar background color
+          paddingTop: 10,
+
           height: 80, // Adjust height if needed
         },
         tabBarLabelStyle: {
+          paddingTop: 10,
+
           fontSize: 10, // Customize text size
         },
         // tabBarIconStyle: {
