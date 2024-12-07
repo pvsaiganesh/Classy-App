@@ -200,6 +200,9 @@ export default function Page() {
       <Row>
         <Col numRows={4}>
           <Button
+            onPress={() => {
+              router.push("/(drawer)");
+            }}
             mode="contained"
             labelStyle={{ color: "white", fontSize: 16 }}
             style={{ ...styles.bgOrange, ...styles.button }}
