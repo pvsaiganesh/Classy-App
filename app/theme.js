@@ -109,6 +109,7 @@ export const theme = {
     surfaceDisabled: "rgba(32, 27, 23, 0.12)",
     onSurfaceDisabled: "rgba(32, 27, 23, 0.38)",
     backdrop: "#FEAD54",
+    grey: "rgba(109, 125, 147, 1)",
   },
   // colors: {
   //   primary: "rgb(138, 81, 0)",
