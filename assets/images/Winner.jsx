@@ -7,7 +7,12 @@ const Winner = (props) => (
     width="40"
     height="39"
     viewBox="0 0 40 39"
-    fill="none"
+    fill={
+      props.color === theme.colors.primaryContainer
+        ? theme.colors.primaryContainer
+        : "#ffffff"
+    }
+    stroke={props.color}
     xmlns="http://www.w3.org/2000/svg"
   >
     <Path
