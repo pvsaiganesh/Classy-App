@@ -13,6 +13,7 @@ import {
 import Winner from "../../../assets/images/Winner";
 import Coupon from "../../../assets/images/Coupon";
 import ProfileIcon from "../../../assets/images/Profile";
+import SearchIcon from "../../../assets/images/Search";
 export default function TabLayout() {
   return (
     <Tabs
@@ -27,7 +28,7 @@ export default function TabLayout() {
         },
         tabBarLabelStyle: {
           paddingTop: 10,
-
+          paddingBottom: 10,
           fontSize: 10, // Customize text size
         },
         // tabBarIconStyle: {
@@ -48,9 +49,7 @@ export default function TabLayout() {
         name="search"
         options={{
           title: "Search",
-          tabBarIcon: ({ color }) => (
-            <Octicons name="search" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <SearchIcon color={color} />,
         }}
       />
       <Tabs.Screen
