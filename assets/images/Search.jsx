@@ -30,17 +30,17 @@ const SearchIcon = (props) => (
       cy="12.7474"
       r="9.73761"
       stroke="#6D7D93"
-      stroke-width="1.72"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.72"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <Path
       opacity="0.6"
       d="M19.7715 20.0256L23.5892 23.8334"
       stroke="#6D7D93"
-      stroke-width="1.72"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.72"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </Svg>
 );

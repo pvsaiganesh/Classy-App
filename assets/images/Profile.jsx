@@ -25,20 +25,20 @@ const ProfileIcon = (props) => (
     stroke={props.color}
     xmlns="http://www.w3.org/2000/svg"
   >
-    <G clip-path="url(#clip0_1110_1809)">
+    <G clipPath="url(#clip0_1110_1809)">
       <Path
         d="M23.1593 23.5589C22.5895 21.9641 21.3341 20.5549 19.5876 19.5499C17.8412 18.5448 15.7013 18 13.5 18C11.2987 18 9.15883 18.5448 7.41239 19.5498C5.66595 20.5549 4.41049 21.9641 3.84074 23.5589"
         stroke="#96A0B5"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <Circle
         cx="13.5"
         cy="9"
         r="5"
         stroke="#96A0B5"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </G>
     <Defs>
