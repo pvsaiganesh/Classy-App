@@ -7,6 +7,8 @@ import DrawerLogo from "../../assets/images/DrawerLogo";
 import { IconButton } from "react-native-paper";
 import { TouchableOpacity, View, Dimensions, StyleSheet } from "react-native";
 import Logo from "../../assets/images/Logo";
+import Cart from "../../assets/images/Cart";
+import Bell from "../../assets/images/Bell";
 // import Slot from "expo-router";
 const { width, height } = Dimensions.get("window");
 
@@ -90,16 +92,16 @@ export default function Layout() {
       flex: 3,
     },
     "5col": {
-      flex: 4,
+      flex: 5,
     },
     "6col": {
-      flex: 4,
+      flex: 6,
     },
     "7col": {
-      flex: 4,
+      flex: 7,
     },
     "8col": {
-      flex: 4,
+      flex: 8,
     },
   });
   return (
@@ -160,14 +162,14 @@ export default function Layout() {
                 <Col numRows={1}>
                   <View style={{ padding: 10 }}>
                     <TouchableOpacity onPress={() => {}}>
-                      <DrawerLogo />
+                      <Bell />
                     </TouchableOpacity>
                   </View>
                 </Col>
                 <Col numRows={1}>
                   <View style={{ padding: 10 }}>
                     <TouchableOpacity onPress={() => {}}>
-                      <DrawerLogo />
+                      <Cart />
                     </TouchableOpacity>
                   </View>
                 </Col>
