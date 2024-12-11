@@ -10,6 +10,7 @@ import { Link } from "expo-router";
 import Logo from "../assets/logo";
 const { width, height } = Dimensions.get("window");
 import { StatusBar } from "expo-status-bar";
+import DrawerLogo from "./../assets/images/DrawerLogo";
 
 const styles = StyleSheet.create({
   container: {
@@ -36,6 +37,7 @@ export default function Page() {
           <Logo />
         </ImageBackground>
       </Link>
+      {/* <DrawerLogo /> */}
     </View>
   );
 }
