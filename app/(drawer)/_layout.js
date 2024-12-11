@@ -25,10 +25,10 @@ export default function Layout() {
         }}
       >
         {/* <Drawer.Screen
-          name="productpage" // This is the name of the page and must match the url from root
+          name="index" // This is the name of the page and must match the url from root
           options={{
-            drawerLabel: "product details",
-            title: "product page",
+            drawerLabel: "Home",
+            title: "overview",
           }}
         /> */}
         {/* <Drawer.Screen
