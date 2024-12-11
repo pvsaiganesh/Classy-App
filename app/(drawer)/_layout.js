@@ -129,7 +129,11 @@ export default function Layout() {
               >
                 <Col numRows={1}>
                   <View style={{ padding: 10 }}>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.toggleDrawer();
+                      }}
+                    >
                       <DrawerLogo />
                     </TouchableOpacity>
                   </View>
