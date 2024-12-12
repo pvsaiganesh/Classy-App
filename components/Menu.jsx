@@ -111,6 +111,7 @@ const Menu = ({ navigation }) => {
             <Avatar.Image
               size={84}
               source={require("../assets/images/avatar.png")}
+              style={{ marginBottom: 30 }}
             />
             <Text
               style={{
