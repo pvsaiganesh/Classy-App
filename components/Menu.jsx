@@ -17,6 +17,10 @@ import { ScrollView } from "react-native-gesture-handler";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 const { width, height } = Dimensions.get("window");
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 const Col = ({ numRows = 4, children }) => {
   return <View style={styles[`${numRows}col`]}>{children}</View>;
@@ -163,49 +167,65 @@ const Menu = ({ navigation }) => {
             >
               <Drawer.Item
                 label="Lucky Draw"
-                icon={(props) => <Winner />}
+                icon={({ color }) => (
+                  <FontAwesome5 name="trophy" size={24} color={color} />
+                )}
                 active={active === "(luckydraw)"}
                 onPress={() => setActive("(luckydraw)")}
               />
               <Drawer.Item
                 label="Notifications"
-                icon={(props) => <Bell />}
+                icon={({ color }) => (
+                  <FontAwesome name="bell" size={24} color={color} />
+                )}
                 active={active === "(notifications)"}
                 onPress={() => setActive("(notifications)")}
               />
               <Drawer.Item
                 label="Wishlist"
-                icon={({ color }) => <IconButton icon="heart" color={color} />}
+                icon={({ color }) => (
+                  <FontAwesome name="heart" size={24} color={color} />
+                )}
                 active={active === "(myorders)"}
                 onPress={() => setActive("(myorders)")}
               />
               <Drawer.Item
                 label="My Orders"
-                icon={(props) => <Winner />}
+                icon={({ color }) => <Winner />}
                 active={active === "(wishlist)"}
                 onPress={() => setActive("(wishlist)")}
               />
               <Drawer.Item
                 label="My Cart"
-                icon={(props) => <Cart />}
+                icon={({ color }) => (
+                  <FontAwesome name="shopping-cart" size={24} color={color} />
+                )}
                 active={active === "(mycart)"}
                 onPress={() => setActive("(mycart)")}
               />
               <Drawer.Item
                 label="My Coupons"
-                icon={(props) => <Coupon />}
+                icon={({ color }) => (
+                  <MaterialCommunityIcons
+                    name="ticket"
+                    size={24}
+                    color={color}
+                  />
+                )}
                 active={active === "(mycoupons)"}
                 onPress={() => setActive("(mycoupons)")}
               />
               <Drawer.Item
                 label="How It Works"
-                icon={(props) => <Winner />}
+                icon={({ color }) => <Winner />}
                 active={active === "(howitworks)"}
                 onPress={() => setActive("(howitworks)")}
               />
               <Drawer.Item
                 label="Rules and guidelines"
-                icon={(props) => <Winner />}
+                icon={({ color }) => (
+                  <FontAwesome name="file" size={24} color={color} />
+                )}
                 active={active === "(rulesandregulations)"}
                 onPress={() => setActive("(rulesandregulations)")}
               />

@@ -10,10 +10,14 @@ import {
   Checkbox,
   Text,
 } from "react-native-paper";
-import Winner from "../../../assets/images/Winner";
-import Coupon from "../../../assets/images/Coupon";
-import ProfileIcon from "../../../assets/images/Profile";
-import SearchIcon from "../../../assets/images/Search";
+// import Winner from "../../../assets/images/Winner";
+// import Coupon from "../../../assets/images/Coupon";
+// import ProfileIcon from "../../../assets/images/Profile";
+// import SearchIcon from "../../../assets/images/Search";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
 export default function TabLayout() {
   return (
     <Tabs
@@ -42,7 +46,7 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => (
-            <Foundation name="home" size={24} color={color} />
+            <FontAwesome name="home" size={24} color={color} />
           ),
         }}
       />
@@ -50,7 +54,9 @@ export default function TabLayout() {
         name="search"
         options={{
           title: "Search",
-          tabBarIcon: ({ color }) => <SearchIcon color={color} />,
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="search" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
@@ -60,21 +66,27 @@ export default function TabLayout() {
         )}
         options={{
           title: "Draw",
-          tabBarIcon: ({ color }) => <Winner color={color} />,
+          tabBarIcon: ({ color }) => (
+            <FontAwesome5 name="trophy" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="coupons"
         options={{
           title: "Coupons",
-          tabBarIcon: ({ color }) => <Coupon color={color} />,
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="ticket" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person-sharp" size={24} color={color} />
+          ),
         }}
       />
     </Tabs>
