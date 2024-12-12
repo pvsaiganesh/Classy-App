@@ -191,7 +191,9 @@ const Menu = ({ navigation }) => {
               />
               <Drawer.Item
                 label="My Orders"
-                icon={({ color }) => <Winner />}
+                icon={({ color }) => (
+                  <FontAwesome name="shopping-bag" size={24} color={color} />
+                )}
                 active={active === "(wishlist)"}
                 onPress={() => setActive("(wishlist)")}
               />
@@ -217,7 +219,9 @@ const Menu = ({ navigation }) => {
               />
               <Drawer.Item
                 label="How It Works"
-                icon={({ color }) => <Winner />}
+                icon={({ color }) => (
+                  <FontAwesome name="question-circle" size={24} color={color} />
+                )}
                 active={active === "(howitworks)"}
                 onPress={() => setActive("(howitworks)")}
               />
