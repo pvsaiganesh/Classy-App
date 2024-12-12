@@ -179,8 +179,8 @@ const Menu = ({ navigation }) => {
               <Drawer.Item
                 label="My Orders"
                 icon={(props) => <Winner />}
-                active={active === "(myorders)"}
-                onPress={() => setActive("first")}
+                active={active === "(wishlist)"}
+                onPress={() => setActive("(wishlist)")}
               />
               <Drawer.Item
                 label="My Cart"
