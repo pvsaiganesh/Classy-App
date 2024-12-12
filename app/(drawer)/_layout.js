@@ -17,7 +17,7 @@ import {
 } from "@react-navigation/drawer";
 import ProfileInMenu from "../../components/Menu";
 import Menu from "../../components/Menu";
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 // import Slot from "expo-router";
 const { width, height } = Dimensions.get("window");
 
@@ -59,7 +59,6 @@ const { width, height } = Dimensions.get("window");
 //     </Stack.Navigator>
 //   );
 // }
-
 
 const Col = ({ numRows = 4, children }) => {
   return <View style={styles[`${numRows}col`]}>{children}</View>;
@@ -199,7 +198,11 @@ function DrawerNavigator({ navigation, route }) {
                     backgroundColor: theme.colors.onPrimary,
                   }}
                 >
-                  <TouchableOpacity onPress={() => {}}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      router.push("/(drawer)/(tabs)");
+                    }}
+                  >
                     <Logo />
                   </TouchableOpacity>
                 </View>
