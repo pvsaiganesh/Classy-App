@@ -1,15 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, Dimensions, Pressable } from "react-native";
 import theme from "../app/theme";
-import { Avatar, Drawer, IconButton } from "react-native-paper";
+import { Avatar, Button, Drawer, IconButton } from "react-native-paper";
 import Winner from "../assets/images/Winner";
 import Bell from "../assets/images/Bell";
 import Cart from "../assets/images/Cart";
 import Coupon from "../assets/images/Coupon";
-import {
-  GestureHandlerRootView,
-  ScrollView,
-} from "react-native-gesture-handler";
+import { ScrollView } from "react-native-gesture-handler";
+import { router } from "expo-router";
 const { width, height } = Dimensions.get("window");
 
 const Col = ({ numRows = 4, children }) => {
@@ -106,110 +104,128 @@ const styles = StyleSheet.create({
 const Menu = ({ navigation }) => {
   const [active, setActive] = React.useState("");
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <ScrollView>
-        <View styles={styles.app}>
-          <Row>
-            <Col numRows={8}>
-              <Pressable
-                onPress={() => {
-                  navigation.navigate("(profile)");
-                }}
-              >
-                <View
+    <ScrollView styles={styles.app}>
+      <Row>
+        <Col numRows={8}>
+          <Pressable
+            onPress={() => {
+              navigation.navigate("(profile)");
+            }}
+          >
+            <View
+              style={{
+                backgroundColor: theme.colors.primaryContainer,
+                paddingTop: 60,
+
+                paddingStart: 20,
+                paddingEnd: 20,
+                paddingBottom: 20,
+
+                textAlign: "start",
+              }}
+            >
+              <View style={{ alignSelf: "start" }}>
+                <Avatar.Image
+                  size={84}
+                  source={require("../assets/images/avatar.png")}
+                  style={{ marginBottom: 30 }}
+                />
+                <Text
                   style={{
-                    backgroundColor: theme.colors.primaryContainer,
-                    paddingTop: 60,
-
-                    paddingStart: 20,
-                    paddingEnd: 20,
-                    paddingBottom: 20,
-
-                    textAlign: "start",
+                    color: theme.colors.primary,
+                    fontWeight: 800,
+                    fontSize: 20,
                   }}
                 >
-                  <View style={{ alignSelf: "start" }}>
-                    <Avatar.Image
-                      size={84}
-                      source={require("../assets/images/avatar.png")}
-                      style={{ marginBottom: 30 }}
-                    />
-                    <Text
-                      style={{
-                        color: theme.colors.primary,
-                        fontWeight: 800,
-                        fontSize: 20,
-                      }}
-                    >
-                      Suresh Prabha
-                    </Text>
-                  </View>
-                </View>
-              </Pressable>
-            </Col>
-          </Row>
-          <Row>
-            <Col numRows={8}>
-              <Drawer.Section
-                style={{ marginTop: 20, margin: 10, gap: 20 }}
-                showDivider={false}
-              >
-                <Drawer.Item
-                  label="Lucky Draw"
-                  icon={(props) => <Winner />}
-                  active={active === "first"}
-                  onPress={() => setActive("first")}
-                />
-                <Drawer.Item
-                  label="Notifications"
-                  icon={(props) => <Bell />}
-                  active={active === "first"}
-                  onPress={() => setActive("first")}
-                />
-                <Drawer.Item
-                  label="Wishlist"
-                  icon={({ color }) => (
-                    <IconButton icon="heart" color={color} />
-                  )}
-                  active={active === "first"}
-                  onPress={() => setActive("first")}
-                />
-                <Drawer.Item
-                  label="Orders"
-                  icon={(props) => <Winner />}
-                  active={active === "first"}
-                  onPress={() => setActive("first")}
-                />
-                <Drawer.Item
-                  label="Cart"
-                  icon={(props) => <Cart />}
-                  active={active === "first"}
-                  onPress={() => setActive("first")}
-                />
-                <Drawer.Item
-                  label="Coupons"
-                  icon={(props) => <Coupon />}
-                  active={active === "first"}
-                  onPress={() => setActive("first")}
-                />
-                <Drawer.Item
-                  label="How It Works"
-                  icon={(props) => <Winner />}
-                  active={active === "first"}
-                  onPress={() => setActive("first")}
-                />
-                <Drawer.Item
-                  label="Rules and guidelines"
-                  icon={(props) => <Winner />}
-                  active={active === "first"}
-                  onPress={() => setActive("first")}
-                />
-              </Drawer.Section>
-            </Col>
-          </Row>
-        </View>
-      </ScrollView>
-    </GestureHandlerRootView>
+                  Suresh Prabha
+                </Text>
+              </View>
+            </View>
+          </Pressable>
+        </Col>
+      </Row>
+      <Row>
+        <Col numRows={8}>
+          <Drawer.Section
+            style={{ marginTop: 20, margin: 10, gap: 20 }}
+            showDivider={false}
+          >
+            <Drawer.Item
+              label="Lucky Draw"
+              icon={(props) => <Winner />}
+              active={active === "first"}
+              onPress={() => setActive("first")}
+            />
+            <Drawer.Item
+              label="Notifications"
+              icon={(props) => <Bell />}
+              active={active === "first"}
+              onPress={() => setActive("first")}
+            />
+            <Drawer.Item
+              label="Wishlist"
+              icon={({ color }) => <IconButton icon="heart" color={color} />}
+              active={active === "first"}
+              onPress={() => setActive("first")}
+            />
+            <Drawer.Item
+              label="Orders"
+              icon={(props) => <Winner />}
+              active={active === "first"}
+              onPress={() => setActive("first")}
+            />
+            <Drawer.Item
+              label="Cart"
+              icon={(props) => <Cart />}
+              active={active === "first"}
+              onPress={() => setActive("first")}
+            />
+            <Drawer.Item
+              label="Coupons"
+              icon={(props) => <Coupon />}
+              active={active === "first"}
+              onPress={() => setActive("first")}
+            />
+            <Drawer.Item
+              label="How It Works"
+              icon={(props) => <Winner />}
+              active={active === "first"}
+              onPress={() => setActive("first")}
+            />
+            <Drawer.Item
+              label="Rules and guidelines"
+              icon={(props) => <Winner />}
+              active={active === "first"}
+              onPress={() => setActive("first")}
+            />
+          </Drawer.Section>
+        </Col>
+      </Row>
+      <Row style={{ marginTop: 20, margin: 10, gap: 20, alignSelf: "center" }}>
+        <Col numRows={4}>
+          <Button
+            onPress={() => {
+              router.push("/login");
+            }}
+            mode="contained"
+            labelStyle={{ color: "white", fontSize: 16 }}
+            style={{ ...styles.bgOrange, ...styles.button }}
+          >
+            Login
+          </Button>
+        </Col>
+        <Col numRows={4}>
+          <Button
+            onPress={() => {
+              router.push("/register");
+            }}
+            labelStyle={{ color: "black", fontSize: 16 }}
+          >
+            Register
+          </Button>
+        </Col>
+      </Row>
+    </ScrollView>
   );
 };
 

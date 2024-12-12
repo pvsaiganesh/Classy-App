@@ -5,30 +5,31 @@ import {
   useQueryClient,
   QueryClient,
   QueryClientProvider,
-} from '@tanstack/react-query'
+} from "@tanstack/react-query";
 import "../global.css";
 import { AppRegistry } from "react-native";
-// import name from "../app";
 import { theme } from "./theme";
 import { PaperProvider } from "react-native-paper";
-
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 const queryClient = new QueryClient();
 
 export default function RootLayout() {
   return (
     <PaperProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
-        <Stack
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Stack.Screen name="index" />
-          <Stack.Screen name="splashscreen" />
-          <Stack.Screen name="details" />
-          <Stack.Screen name="onboarding" />
-          <Stack.Screen name="login" />
-        </Stack>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Stack
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="index" />
+            <Stack.Screen name="splashscreen" />
+            <Stack.Screen name="details" />
+            <Stack.Screen name="onboarding" />
+            <Stack.Screen name="login" />
+          </Stack>
+        </GestureHandlerRootView>
       </QueryClientProvider>
     </PaperProvider>
   );
