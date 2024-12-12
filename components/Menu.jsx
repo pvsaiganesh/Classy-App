@@ -158,7 +158,7 @@ const Menu = ({ navigation }) => {
         <Row>
           <Col numRows={8}>
             <Drawer.Section
-              style={{ paddingTop: 10, gap: 20 }}
+              style={{ paddingTop: 20, gap: 20 }}
               showDivider={false}
             >
               <Drawer.Item

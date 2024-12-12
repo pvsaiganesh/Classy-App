@@ -19,7 +19,7 @@ const Page = () => {
           {/* Profile Header */}
           <View style={styles.header}>
             <Image
-              source={require("../../../assets/images/splash-screen.png")}
+              source={require("../../../assets/images/profile-background.png")}
               style={styles.backgroundImage}
             />
             <View style={styles.profileWrapper}>
