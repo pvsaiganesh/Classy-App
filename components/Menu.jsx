@@ -157,7 +157,10 @@ const Menu = ({ navigation }) => {
       <SafeAreaView>
         <Row>
           <Col numRows={8}>
-            <Drawer.Section style={{ gap: 20 }} showDivider={false}>
+            <Drawer.Section
+              style={{ paddingTop: 10, gap: 20 }}
+              showDivider={false}
+            >
               <Drawer.Item
                 label="Lucky Draw"
                 icon={(props) => <Winner />}
