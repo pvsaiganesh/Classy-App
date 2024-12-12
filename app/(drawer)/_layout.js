@@ -20,7 +20,8 @@ import Menu from "../../components/Menu";
 import { router, Stack } from "expo-router";
 // import Slot from "expo-router";
 const { width, height } = Dimensions.get("window");
-
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
 // function CustomDrawerContent(props) {
 //   return (
 //     <DrawerContentScrollView {...props}>
@@ -180,7 +181,7 @@ function DrawerNavigator({ navigation, route }) {
                       navigation.toggleDrawer();
                     }}
                   >
-                    <DrawerLogo />
+                    <Ionicons name="apps" size={24} color="white" />
                   </TouchableOpacity>
                 </View>
               </Col>
@@ -210,14 +211,14 @@ function DrawerNavigator({ navigation, route }) {
               <Col numRows={1}>
                 <View style={{ padding: 10 }}>
                   <TouchableOpacity onPress={() => {}}>
-                    <Bell />
+                    <FontAwesome name="bell" size={24} color="white" />
                   </TouchableOpacity>
                 </View>
               </Col>
               <Col numRows={1}>
                 <View style={{ padding: 10 }}>
                   <TouchableOpacity onPress={() => {}}>
-                    <Cart />
+                    <FontAwesome name="shopping-cart" size={24} color="white" />
                   </TouchableOpacity>
                 </View>
               </Col>

@@ -16,9 +16,10 @@ import Coupon from "../assets/images/Coupon";
 import { ScrollView } from "react-native-gesture-handler";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 const { width, height } = Dimensions.get("window");
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
