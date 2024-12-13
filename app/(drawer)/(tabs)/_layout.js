@@ -17,12 +17,17 @@ import {
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import Header from "../../../components/Header";
+import React from "react";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
+        header: () => {
+          return <Header />;
+        },
         tabBarActiveTintColor: theme.colors.primaryContainer, // Active tab icon/text color
         tabBarInactiveTintColor: theme.colors.grey, // Inactive tab icon/text color
         tabBarStyle: {
@@ -84,7 +89,7 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
-          headerShown: true,
+          headerShown: false,
           headerBackButtonMenuEnabled: true,
           tabBarIcon: ({ color }) => (
             <Ionicons name="person-sharp" size={24} color={color} />

@@ -64,7 +64,12 @@ const Tab = () => {
                 style={styles.forwardIcon}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.optionRow}>
+            <TouchableOpacity
+              onPress={() => {
+                router.push("../../(profile)/myaccount");
+              }}
+              style={styles.optionRow}
+            >
               <View style={styles.rowContent}>
                 <Ionicons name="lock-closed-outline" style={styles.icon} />
                 <View>
@@ -87,7 +92,12 @@ const Tab = () => {
 
           {/* More Options */}
           <View style={styles.containerSection}>
-            <TouchableOpacity style={styles.optionRow}>
+            <TouchableOpacity
+              onPress={() => {
+                router.push("../../(profile)/myaccount");
+              }}
+              style={styles.optionRow}
+            >
               <View style={styles.rowContent}>
                 <Ionicons name="headset-outline" style={styles.icon} />
                 <View>
@@ -99,7 +109,12 @@ const Tab = () => {
                 style={styles.forwardIcon}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.optionRow}>
+            <TouchableOpacity
+              onPress={() => {
+                router.push("../../(profile)/myaccount");
+              }}
+              style={styles.optionRow}
+            >
               <View style={styles.rowContent}>
                 <Ionicons
                   name="information-circle-outline"
@@ -114,7 +129,12 @@ const Tab = () => {
                 style={styles.forwardIcon}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.optionRow}>
+            <TouchableOpacity
+              onPress={() => {
+                router.push("../../(profile)/myaccount");
+              }}
+              style={styles.optionRow}
+            >
               <View style={styles.rowContent}>
                 <Ionicons name="log-out-outline" style={styles.icon} />
                 <View>
@@ -130,7 +150,12 @@ const Tab = () => {
 
           {/* Legal Options */}
           <View style={styles.section}>
-            <TouchableOpacity style={styles.optionRow}>
+            <TouchableOpacity
+              onPress={() => {
+                router.push("../../(profile)/myaccount");
+              }}
+              style={styles.optionRow}
+            >
               <View style={styles.rowContent}>
                 <Ionicons name="document-text-outline" style={styles.icon} />
                 <View>
@@ -142,7 +167,12 @@ const Tab = () => {
                 style={styles.forwardIcon}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.optionRow}>
+            <TouchableOpacity
+              onPress={() => {
+                router.push("../../(profile)/myaccount");
+              }}
+              style={styles.optionRow}
+            >
               <View style={styles.rowContent}>
                 <Ionicons name="document-outline" style={styles.icon} />
                 <View>

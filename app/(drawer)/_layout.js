@@ -155,7 +155,6 @@ const styles = StyleSheet.create({
   },
 });
 function DrawerNavigator({ navigation, route }) {
-  const [searchQuery, setSearchQuery] = React.useState("");
   const { header } = useContext(AppContext);
   const getCurrentRoute = (state) => {
     if (state.routes[state.index].state != undefined) {
@@ -171,93 +170,13 @@ function DrawerNavigator({ navigation, route }) {
           return <Menu {...props} />;
         },
         headerStyle: { backgroundColor: theme.colors.primaryContainer },
-        headerShown: header,
-        header: ({ navigation, route, options }) => {
-          const title = getHeaderTitle(options, route.name);
+        headerShown: false,
+        // header: ({ navigation, route, options }) => {
+        //   const title = getHeaderTitle(options, route.name);
 
-          return (
-            <>
-              <Row
-                style={{
-                  paddingTop: 50,
-                  paddingBottom: 20,
-                  padding: 10,
-                  backgroundColor: theme.colors.primaryContainer,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  alignSelf: "stretch", // Optional, remove if not needed
-                }}
-              >
-                <Col numRows={2}>
-                  <View style={{ padding: 10 }}>
-                    <TouchableOpacity
-                      onPress={() => {
-                        navigation.toggleDrawer();
-                      }}
-                    >
-                      <Ionicons name="apps" size={24} color="white" />
-                    </TouchableOpacity>
-                  </View>
-                </Col>
-
-                <Col numRows={4}>
-                  <View
-                    style={{
-                      padding: 5,
-                      flex: 1,
-                      direction: "row",
-                      alignSelf: "center",
-                      justifyContent: "center",
-                      textAlign: "center",
-                      borderRadius: 45,
-                      backgroundColor: theme.colors.onPrimary,
-                    }}
-                  >
-                    <TouchableOpacity
-                      onPress={() => {
-                        router.push("/(drawer)/(tabs)");
-                      }}
-                    >
-                      <Logo />
-                    </TouchableOpacity>
-                  </View>
-                </Col>
-                <Col numRows={1}>
-                  <View style={{ paddingStart: 10 }}>
-                    <TouchableOpacity onPress={() => {}}>
-                      <FontAwesome name="bell" size={24} color="white" />
-                    </TouchableOpacity>
-                  </View>
-                </Col>
-                <Col numRows={1}>
-                  <View>
-                    <TouchableOpacity onPress={() => {}}>
-                      <FontAwesome
-                        name="shopping-cart"
-                        size={24}
-                        color="white"
-                      />
-                    </TouchableOpacity>
-                  </View>
-                </Col>
-              </Row>
-              <Row
-                style={{
-                  padding: 10,
-                  backgroundColor: theme.colors.primaryContainer,
-                }}
-              >
-                <Col numRows={8}>
-                  <Searchbar
-                    placeholder="Search"
-                    onChangeText={setSearchQuery}
-                    value={searchQuery}
-                  />
-                </Col>
-              </Row>
-            </>
-          );
-        },
+        //   return (
+        //   );
+        // },
         // headerTitle: (props) => <LogoTitle {...props} />,
         // headerShown: false,
         // headerLeft: ({ color }) => (

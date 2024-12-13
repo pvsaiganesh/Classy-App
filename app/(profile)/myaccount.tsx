@@ -53,7 +53,7 @@ const AccountScreen = ({ navigation }) => {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       {/* <View style={styles.header}>
         <TouchableOpacity
@@ -169,7 +169,7 @@ const AccountScreen = ({ navigation }) => {
           </LinearGradient>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 

@@ -30,7 +30,7 @@ export default function RootLayout() {
               <Stack.Screen name="details" />
               <Stack.Screen name="onboarding" />
               <Stack.Screen name="login" />
-              <Stack.Screen options={{ headerShown: true }} name="/(profile)" />
+              <Stack.Screen options={{ headerShown: true }} name="(profile)" />
             </Stack>
           </GestureHandlerRootView>
         </AppProvider>
