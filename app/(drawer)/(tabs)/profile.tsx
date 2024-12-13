@@ -47,7 +47,7 @@ const Tab = () => {
             <TouchableOpacity
               style={styles.optionRow}
               onPress={() => {
-                router.push("../../(profile)/myaccount");
+                router.push("../(profile)");
               }}
             >
               <View style={styles.rowContent}>
