@@ -16,14 +16,21 @@ import { Button, IconButton, MD3Colors, useTheme } from "react-native-paper";
 
 const { width, height } = Dimensions.get("window");
 const styles = StyleSheet.create({
-  app: { flex: 1, backgroundColor: "#fff" },
-  appContainer: { flex: 1, padding: 10, paddingTop: 30 },
+  app: {
+    flex: 4,
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
+  appContainer: { flex: 2, padding: 10, paddingTop: 30 },
   appContainer2: {
-    flex: 1,
+    flex: 2,
     textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
+    alignSelf: "flex-end",
   },
   row: { flexDirection: "row" },
   baseText: {
@@ -38,7 +45,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   backgroundImage: {
-    flex: 1,
+    flex: 2,
+    alignSelf: "flex-end",
   },
   image: {
     flex: 1,
@@ -54,7 +62,7 @@ export default function Page() {
       <StatusBar hidden animated={true} />
       <ImageBackground
         source={require("./../assets/images/onboarding-bg-1.png")} // Replace with your image path
-        style={[styles.backgroundImage, { width: width, height: height / 3 }]}
+        style={[styles.backgroundImage, { width: width, height: height / 2 }]}
       >
         <View style={styles.appContainer}>
           <StatusBar />
