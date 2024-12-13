@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <TouchableOpacity>
           <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
         <TouchableOpacity>
           <Ionicons name="cart-outline" size={24} color="black" />
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       {/* Content */}
       <ScrollView contentContainerStyle={styles.contentContainer}>

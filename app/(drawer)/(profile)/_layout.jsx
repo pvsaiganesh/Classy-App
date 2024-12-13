@@ -1,9 +1,24 @@
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 import { theme } from "../../theme";
+import { TouchableOpacity, Text } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Layout() {
   return (
-    <Stack screenOptions={{ headerShown: true }}>
+    <Stack
+      screenOptions={{
+        // headerBackButtonDisplayMode: "minimal",
+        headerShown: true,
+        headerLeft: () => (
+          <TouchableOpacity
+            onPress={() => router.push("../(tabs)/profile")}
+            style={{ padding: 10 }}
+          >
+            <Ionicons name="arrow-back" size={24} color="#000" />
+          </TouchableOpacity>
+        ),
+      }}
+    >
       <Stack.Screen
         name="myaccount"
         options={{ label: "My Account", title: "My Account" }}

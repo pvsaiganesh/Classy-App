@@ -1,13 +1,19 @@
-import React from 'react';
-import { View, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons } from '@expo/vector-icons';
+import React from "react";
+import {
+  View,
+  TextInput,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { Ionicons } from "@expo/vector-icons";
 
 const ChangePasswordScreen = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, backgroundColor: '#FFF' }}>
+    <View style={{ flex: 1, backgroundColor: "#FFF" }}>
       {/* Header Section */}
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Ionicons name="arrow-back" size={24} color="#000" />
         </TouchableOpacity>
@@ -15,7 +21,7 @@ const ChangePasswordScreen = ({ navigation }) => {
         <TouchableOpacity style={styles.cartButton}>
           <Ionicons name="cart-outline" size={24} color="#000" />
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       {/* Form Section */}
       <View style={styles.container}>
@@ -44,7 +50,7 @@ const ChangePasswordScreen = ({ navigation }) => {
 
         <TouchableOpacity style={styles.button}>
           <LinearGradient
-            colors={['#D77C19', '#FEAD54']}
+            colors={["#D77C19", "#FEAD54"]}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             style={styles.gradient}
@@ -59,11 +65,11 @@ const ChangePasswordScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     padding: 15,
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     elevation: 2,
   },
   backButton: {
@@ -71,8 +77,8 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#000',
+    fontWeight: "bold",
+    color: "#000",
   },
   cartButton: {
     padding: 5,
@@ -82,7 +88,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     padding: 10,
     borderRadius: 10,
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     elevation: 2,
   },
   inputGroup: {
@@ -90,34 +96,34 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 5,
-    color: '#333',
+    color: "#333",
   },
   input: {
     height: 50,
-    borderColor: '#DDD',
+    borderColor: "#DDD",
     borderWidth: 1,
     borderRadius: 8,
     paddingHorizontal: 10,
     fontSize: 16,
-    color: '#000',
+    color: "#000",
   },
   button: {
     marginTop: 20,
     borderRadius: 8,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   gradient: {
     paddingVertical: 15,
     borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   buttonText: {
-    color: '#FFF',
+    color: "#FFF",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 

@@ -6,7 +6,7 @@ const SupportScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           style={styles.backButton}
@@ -17,7 +17,7 @@ const SupportScreen = ({ navigation }) => {
         <TouchableOpacity style={styles.cartButton}>
           <Ionicons name="cart-outline" size={24} color="#000" />
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       {/* Content */}
       <View style={styles.card}>
