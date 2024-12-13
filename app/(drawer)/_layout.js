@@ -167,7 +167,8 @@ function DrawerNavigator({ navigation, route }) {
             <Row
               style={{
                 paddingTop: 50,
-                padding: 20,
+                paddingBottom: 30,
+                padding: 10,
                 backgroundColor: theme.colors.primaryContainer,
                 justifyContent: "center",
                 alignItems: "center",
@@ -189,7 +190,7 @@ function DrawerNavigator({ navigation, route }) {
               <Col numRows={5}>
                 <View
                   style={{
-                    padding: 10,
+                    padding: 5,
                     flex: 1,
                     direction: "row",
                     alignSelf: "center",
@@ -209,14 +210,14 @@ function DrawerNavigator({ navigation, route }) {
                 </View>
               </Col>
               <Col numRows={1}>
-                <View style={{ padding: 10 }}>
+                <View style={{ paddingStart: 10 }}>
                   <TouchableOpacity onPress={() => {}}>
                     <FontAwesome name="bell" size={24} color="white" />
                   </TouchableOpacity>
                 </View>
               </Col>
               <Col numRows={1}>
-                <View style={{ padding: 10 }}>
+                <View>
                   <TouchableOpacity onPress={() => {}}>
                     <FontAwesome name="shopping-cart" size={24} color="white" />
                   </TouchableOpacity>
