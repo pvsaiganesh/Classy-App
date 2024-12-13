@@ -22,7 +22,8 @@ import { router, Stack } from "expo-router";
 const { width, height } = Dimensions.get("window");
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../utils/AppContext";
 // function CustomDrawerContent(props) {
 //   return (
 //     <DrawerContentScrollView {...props}>
@@ -155,7 +156,7 @@ const styles = StyleSheet.create({
 });
 function DrawerNavigator({ navigation, route }) {
   const [searchQuery, setSearchQuery] = React.useState("");
-  const { header } = useAuth();
+  const { header } = useContext(AppContext);
   const getCurrentRoute = (state) => {
     if (state.routes[state.index].state != undefined) {
       return getCurrentRoute(state.routes[state.index].state);

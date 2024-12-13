@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,8 +11,13 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
+import { AppContext } from "../../utils/AppContext";
 
 const Tab = () => {
+  const { setHeader } = useContext(AppContext);
+  useEffect(() => {
+    setHeader(false);
+  }, []);
   return (
     <ScrollView>
       <View>

@@ -11,7 +11,7 @@ import { AppRegistry } from "react-native";
 import { theme } from "./theme";
 import { PaperProvider } from "react-native-paper";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { AppProvider } from "@/utils/auth";
+import { AppProvider } from "./utils/AppContext";
 const queryClient = new QueryClient();
 
 export default function RootLayout() {
