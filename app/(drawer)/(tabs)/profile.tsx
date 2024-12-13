@@ -17,6 +17,9 @@ const Tab = () => {
   const { setHeader } = useContext(AppContext);
   useEffect(() => {
     setHeader(false);
+    () => {
+      setHeader(true);
+    };
   }, []);
   return (
     <ScrollView>
