@@ -130,7 +130,7 @@ const Menu = ({ navigation }) => {
             <View
               style={{
                 backgroundColor: theme.colors.primaryContainer,
-                paddingTop: 60,
+                paddingTop: 80,
 
                 paddingStart: 30,
                 paddingEnd: 30,
@@ -159,7 +159,7 @@ const Menu = ({ navigation }) => {
           </Pressable>
         </Col>
       </Row>
-      <SafeAreaView>
+      <View>
         <Row>
           <Col numRows={8}>
             <Drawer.Section
@@ -263,7 +263,7 @@ const Menu = ({ navigation }) => {
             </Button>
           </Col>
         </Row>
-      </SafeAreaView>
+      </View>
     </ScrollView>
   );
 };
