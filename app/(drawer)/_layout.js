@@ -175,7 +175,7 @@ function DrawerNavigator({ navigation, route }) {
                 alignSelf: "stretch", // Optional, remove if not needed
               }}
             >
-              <Col numRows={1}>
+              <Col numRows={2}>
                 <View style={{ padding: 10 }}>
                   <TouchableOpacity
                     onPress={() => {
@@ -187,7 +187,7 @@ function DrawerNavigator({ navigation, route }) {
                 </View>
               </Col>
 
-              <Col numRows={5}>
+              <Col numRows={4}>
                 <View
                   style={{
                     padding: 5,
