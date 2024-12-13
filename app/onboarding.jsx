@@ -76,8 +76,10 @@ const styles = StyleSheet.create({
     flex: 4,
   },
 });
-const Col = ({ numRows, children }) => {
-  return <View style={styles[`${numRows}col`]}>{children}</View>;
+const Col = ({ numRows, children, style }) => {
+  return (
+    <View style={{ ...styles[`${numRows}col`], ...style }}>{children}</View>
+  );
 };
 
 const Row = ({ children, style }) => (
@@ -90,14 +92,20 @@ export default function Page() {
   return (
     <View style={styles.app}>
       <StatusBar hidden animated={true} />
-      <Row style={{ textAlign: "end" }}>
-        <Text
-          onPress={() => {
-            router.push("/login");
-          }}
-        >
-          Skip
-        </Text>
+      <Row>
+        <Col numRows={4}>
+          <Text
+            style={{
+              textAlign: "right",
+              alignItems: "flex-end",
+            }}
+            onPress={() => {
+              router.push("/login");
+            }}
+          >
+            Skip
+          </Text>
+        </Col>
       </Row>
       <Row>
         <View style={{ height: height / 2, width: width / 2, flex: 1 }}>
