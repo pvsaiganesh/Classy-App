@@ -47,7 +47,7 @@ const Tab = () => {
             <TouchableOpacity
               style={styles.optionRow}
               onPress={() => {
-                router.push("../(profile)");
+                router.push("../(profile)/myaccount");
               }}
             >
               <View style={styles.rowContent}>
@@ -66,7 +66,7 @@ const Tab = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/myaccount");
+                router.push("../../(profile)/changepassword");
               }}
               style={styles.optionRow}
             >
@@ -94,7 +94,7 @@ const Tab = () => {
           <View style={styles.containerSection}>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/myaccount");
+                router.push("../../(profile)/helpsupport");
               }}
               style={styles.optionRow}
             >
@@ -111,7 +111,7 @@ const Tab = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/myaccount");
+                router.push("../../(profile)/about");
               }}
               style={styles.optionRow}
             >
@@ -131,7 +131,7 @@ const Tab = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/myaccount");
+                router.push("../../splashscreen");
               }}
               style={styles.optionRow}
             >
@@ -152,7 +152,7 @@ const Tab = () => {
           <View style={styles.section}>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/myaccount");
+                router.push("../../(profile)/privacypolicy");
               }}
               style={styles.optionRow}
             >
@@ -169,7 +169,7 @@ const Tab = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/myaccount");
+                router.push("../../(profile)/useragreement");
               }}
               style={styles.optionRow}
             >
