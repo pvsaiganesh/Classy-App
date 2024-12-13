@@ -66,7 +66,7 @@ const Tab = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/changepassword");
+                router.push("../(profile)/changepassword");
               }}
               style={styles.optionRow}
             >
@@ -94,7 +94,7 @@ const Tab = () => {
           <View style={styles.containerSection}>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/helpsupport");
+                router.push("../(profile)/helpsupport");
               }}
               style={styles.optionRow}
             >
@@ -111,7 +111,7 @@ const Tab = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/about");
+                router.push("../(profile)/about");
               }}
               style={styles.optionRow}
             >
@@ -152,7 +152,7 @@ const Tab = () => {
           <View style={styles.section}>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/privacypolicy");
+                router.push("../(profile)/privacypolicy");
               }}
               style={styles.optionRow}
             >
@@ -169,7 +169,7 @@ const Tab = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                router.push("../../(profile)/useragreement");
+                router.push("../(profile)/useragreement");
               }}
               style={styles.optionRow}
             >
