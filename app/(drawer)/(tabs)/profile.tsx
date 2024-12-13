@@ -15,12 +15,12 @@ import { AppContext } from "../../utils/AppContext";
 
 const Tab = () => {
   const { setHeader } = useContext(AppContext);
-  useEffect(() => {
-    setHeader(false);
-    () => {
-      setHeader(true);
-    };
-  }, []);
+  // useEffect(() => {
+  //   setHeader(false);
+  //   () => {
+  //     setHeader(true);
+  //   };
+  // }, []);
   return (
     <ScrollView>
       <View>

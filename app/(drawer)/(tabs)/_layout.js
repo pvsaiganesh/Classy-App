@@ -86,7 +86,6 @@ export default function TabLayout() {
           title: "Profile",
           headerShown: true,
           headerBackButtonMenuEnabled: true,
-          headerShown: true,
           tabBarIcon: ({ color }) => (
             <Ionicons name="person-sharp" size={24} color={color} />
           ),
