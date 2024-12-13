@@ -167,7 +167,7 @@ function DrawerNavigator({ navigation, route }) {
             <Row
               style={{
                 paddingTop: 50,
-                paddingBottom: 30,
+                paddingBottom: 20,
                 padding: 10,
                 backgroundColor: theme.colors.primaryContainer,
                 justifyContent: "center",
