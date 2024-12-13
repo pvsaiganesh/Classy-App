@@ -4,7 +4,7 @@ import theme from "../theme";
 import { getHeaderTitle } from "@react-navigation/elements";
 import Header from "../../components/Header";
 import DrawerLogo from "../../assets/images/DrawerLogo";
-import { IconButton } from "react-native-paper";
+import { IconButton, Searchbar } from "react-native-paper";
 import { TouchableOpacity, View, Dimensions, StyleSheet } from "react-native";
 import Logo from "../../assets/images/Logo";
 import Cart from "../../assets/images/Cart";
@@ -22,6 +22,7 @@ import { router, Stack } from "expo-router";
 const { width, height } = Dimensions.get("window");
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import React from "react";
 // function CustomDrawerContent(props) {
 //   return (
 //     <DrawerContentScrollView {...props}>
@@ -153,6 +154,7 @@ const styles = StyleSheet.create({
   },
 });
 function DrawerNavigator({ navigation, route }) {
+  const [searchQuery, setSearchQuery] = React.useState("");
   return (
     <Drawer
       screenOptions={{
@@ -164,66 +166,86 @@ function DrawerNavigator({ navigation, route }) {
           const title = getHeaderTitle(options, route.name);
 
           return (
-            <Row
-              style={{
-                paddingTop: 50,
-                paddingBottom: 20,
-                padding: 10,
-                backgroundColor: theme.colors.primaryContainer,
-                justifyContent: "center",
-                alignItems: "center",
-                alignSelf: "stretch", // Optional, remove if not needed
-              }}
-            >
-              <Col numRows={2}>
-                <View style={{ padding: 10 }}>
-                  <TouchableOpacity
-                    onPress={() => {
-                      navigation.toggleDrawer();
-                    }}
-                  >
-                    <Ionicons name="apps" size={24} color="white" />
-                  </TouchableOpacity>
-                </View>
-              </Col>
+            <>
+              <Row
+                style={{
+                  paddingTop: 50,
+                  paddingBottom: 20,
+                  padding: 10,
+                  backgroundColor: theme.colors.primaryContainer,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  alignSelf: "stretch", // Optional, remove if not needed
+                }}
+              >
+                <Col numRows={2}>
+                  <View style={{ padding: 10 }}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.toggleDrawer();
+                      }}
+                    >
+                      <Ionicons name="apps" size={24} color="white" />
+                    </TouchableOpacity>
+                  </View>
+                </Col>
 
-              <Col numRows={4}>
-                <View
-                  style={{
-                    padding: 5,
-                    flex: 1,
-                    direction: "row",
-                    alignSelf: "center",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    borderRadius: 45,
-                    backgroundColor: theme.colors.onPrimary,
-                  }}
-                >
-                  <TouchableOpacity
-                    onPress={() => {
-                      router.push("/(drawer)/(tabs)");
+                <Col numRows={4}>
+                  <View
+                    style={{
+                      padding: 5,
+                      flex: 1,
+                      direction: "row",
+                      alignSelf: "center",
+                      justifyContent: "center",
+                      textAlign: "center",
+                      borderRadius: 45,
+                      backgroundColor: theme.colors.onPrimary,
                     }}
                   >
-                    <Logo />
-                  </TouchableOpacity>
-                </View>
-              </Col>
-              <Col numRows={1}>
-                <View style={{ paddingStart: 10 }}>
-                  <TouchableOpacity onPress={() => {}}>
-                    <FontAwesome name="bell" size={24} color="white" />
-                  </TouchableOpacity>
-                </View>
-              </Col>
-              <Col numRows={1}>
-                <View>
-                  <TouchableOpacity onPress={() => {}}>
-                    <FontAwesome name="shopping-cart" size={24} color="white" />
-                  </TouchableOpacity>
-                </View>
-              </Col>
-            </Row>
+                    <TouchableOpacity
+                      onPress={() => {
+                        router.push("/(drawer)/(tabs)");
+                      }}
+                    >
+                      <Logo />
+                    </TouchableOpacity>
+                  </View>
+                </Col>
+                <Col numRows={1}>
+                  <View style={{ paddingStart: 10 }}>
+                    <TouchableOpacity onPress={() => {}}>
+                      <FontAwesome name="bell" size={24} color="white" />
+                    </TouchableOpacity>
+                  </View>
+                </Col>
+                <Col numRows={1}>
+                  <View>
+                    <TouchableOpacity onPress={() => {}}>
+                      <FontAwesome
+                        name="shopping-cart"
+                        size={24}
+                        color="white"
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  padding: 10,
+                  backgroundColor: theme.colors.primaryContainer,
+                }}
+              >
+                <Col numRows={8}>
+                  <Searchbar
+                    placeholder="Search"
+                    onChangeText={setSearchQuery}
+                    value={searchQuery}
+                  />
+                </Col>
+              </Row>
+            </>
           );
         },
         // headerTitle: (props) => <LogoTitle {...props} />,

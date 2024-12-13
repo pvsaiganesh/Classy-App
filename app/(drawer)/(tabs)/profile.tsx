@@ -10,8 +10,9 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from "expo-router";
 
-const Page = () => {
+const Tab = () => {
   return (
     <ScrollView>
       <View>
@@ -35,7 +36,12 @@ const Page = () => {
 
           {/* Account Options */}
           <View style={styles.containerSection}>
-            <TouchableOpacity style={styles.optionRow}>
+            <TouchableOpacity
+              style={styles.optionRow}
+              onPress={() => {
+                router.push("/(profile)/myaccount");
+              }}
+            >
               <View style={styles.rowContent}>
                 <Ionicons name="person-outline" style={styles.icon} />
                 <View>
@@ -241,4 +247,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Page;
+export default Tab;

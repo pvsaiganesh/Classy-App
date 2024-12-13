@@ -122,41 +122,35 @@ const Menu = ({ navigation }) => {
     <ScrollView styles={styles.app}>
       <Row>
         <Col numRows={8}>
-          <Pressable
-            onPress={() => {
-              navigation.navigate("(profile)");
+          <View
+            style={{
+              backgroundColor: theme.colors.primaryContainer,
+              paddingTop: 80,
+
+              paddingStart: 30,
+              paddingEnd: 30,
+              paddingBottom: 30,
+
+              textAlign: "start",
             }}
           >
-            <View
-              style={{
-                backgroundColor: theme.colors.primaryContainer,
-                paddingTop: 80,
-
-                paddingStart: 30,
-                paddingEnd: 30,
-                paddingBottom: 30,
-
-                textAlign: "start",
-              }}
-            >
-              <View style={{ alignSelf: "start" }}>
-                <Avatar.Image
-                  size={84}
-                  source={require("../assets/images/avatar.png")}
-                  style={{ marginBottom: 30 }}
-                />
-                <Text
-                  style={{
-                    color: theme.colors.primary,
-                    fontWeight: 800,
-                    fontSize: 20,
-                  }}
-                >
-                  Suresh Prabha
-                </Text>
-              </View>
+            <View style={{ alignSelf: "start" }}>
+              <Avatar.Image
+                size={84}
+                source={require("../assets/images/avatar.png")}
+                style={{ marginBottom: 30 }}
+              />
+              <Text
+                style={{
+                  color: theme.colors.primary,
+                  fontWeight: 800,
+                  fontSize: 20,
+                }}
+              >
+                Suresh Prabha
+              </Text>
             </View>
-          </Pressable>
+          </View>
         </Col>
       </Row>
       <View>
