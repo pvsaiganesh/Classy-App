@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Header = () => {
+const Header = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = React.useState("");
   return (
     <>

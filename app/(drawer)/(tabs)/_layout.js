@@ -25,8 +25,8 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: true,
-        header: () => {
-          return <Header />;
+        header: ({ navigation }) => {
+          return <Header navigation={navigation} />;
         },
         tabBarActiveTintColor: theme.colors.primaryContainer, // Active tab icon/text color
         tabBarInactiveTintColor: theme.colors.grey, // Inactive tab icon/text color
