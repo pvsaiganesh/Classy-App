@@ -14,7 +14,7 @@ import Svg, {
 const Logo = () => {
   return (
     <Svg
-      width="200"
+      width="150"
       height="79"
       viewBox="0 0 245 79"
       fill="none"
