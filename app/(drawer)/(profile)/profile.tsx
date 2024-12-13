@@ -14,7 +14,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Page = () => {
   return (
     <ScrollView>
-      <SafeAreaView>
+      <View>
         <View style={styles.container}>
           {/* Profile Header */}
           <View style={styles.header}>
@@ -142,7 +142,7 @@ const Page = () => {
             </TouchableOpacity>
           </View>
         </View>
-      </SafeAreaView>
+      </View>
     </ScrollView>
   );
 };
