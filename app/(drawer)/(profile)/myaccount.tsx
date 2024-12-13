@@ -13,6 +13,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Picker } from "@react-native-picker/picker";
 import * as ImagePicker from "expo-image-picker";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { ScrollView } from "react-native-gesture-handler";
 
 const AccountScreen = ({ navigation }) => {
   const [fullName, setFullName] = useState("");
@@ -52,7 +53,7 @@ const AccountScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
       {/* Header */}
       {/* <View style={styles.header}>
         <TouchableOpacity
@@ -168,7 +169,7 @@ const AccountScreen = ({ navigation }) => {
           </LinearGradient>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 

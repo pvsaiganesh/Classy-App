@@ -11,25 +11,28 @@ import { AppRegistry } from "react-native";
 import { theme } from "./theme";
 import { PaperProvider } from "react-native-paper";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { AppProvider } from "@/utils/auth";
 const queryClient = new QueryClient();
 
 export default function RootLayout() {
   return (
     <PaperProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
-        <GestureHandlerRootView style={{ flex: 1 }}>
-          <Stack
-            screenOptions={{
-              headerShown: false,
-            }}
-          >
-            <Stack.Screen name="index" />
-            <Stack.Screen name="splashscreen" />
-            <Stack.Screen name="details" />
-            <Stack.Screen name="onboarding" />
-            <Stack.Screen name="login" />
-          </Stack>
-        </GestureHandlerRootView>
+        <AppProvider>
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <Stack
+              screenOptions={{
+                headerShown: false,
+              }}
+            >
+              <Stack.Screen name="index" />
+              <Stack.Screen name="splashscreen" />
+              <Stack.Screen name="details" />
+              <Stack.Screen name="onboarding" />
+              <Stack.Screen name="login" />
+            </Stack>
+          </GestureHandlerRootView>
+        </AppProvider>
       </QueryClientProvider>
     </PaperProvider>
   );

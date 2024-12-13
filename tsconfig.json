@@ -18,5 +18,5 @@
     "app/register.jsx",
     "app/login.jsx",
     "app/onboarding.jsx"
-, "app/splashscreen.jsx", "app/index.jsx", "app/+not-found.jsx", "app/details.jsx"  ]
+, "app/splashscreen.jsx", "app/index.jsx", "app/+not-found.jsx", "app/details.jsx", "utils/auth.jsx"  ]
 }

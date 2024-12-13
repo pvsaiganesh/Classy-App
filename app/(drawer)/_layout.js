@@ -155,6 +155,14 @@ const styles = StyleSheet.create({
 });
 function DrawerNavigator({ navigation, route }) {
   const [searchQuery, setSearchQuery] = React.useState("");
+  const { header } = useAuth();
+  const getCurrentRoute = (state) => {
+    if (state.routes[state.index].state != undefined) {
+      return getCurrentRoute(state.routes[state.index].state);
+    } else {
+      return state.routes[state.index];
+    }
+  };
   return (
     <Drawer
       screenOptions={{
@@ -162,6 +170,7 @@ function DrawerNavigator({ navigation, route }) {
           return <Menu {...props} />;
         },
         headerStyle: { backgroundColor: theme.colors.primaryContainer },
+        headerShown: header,
         header: ({ navigation, route, options }) => {
           const title = getHeaderTitle(options, route.name);
 
@@ -250,13 +259,13 @@ function DrawerNavigator({ navigation, route }) {
         },
         // headerTitle: (props) => <LogoTitle {...props} />,
         // headerShown: false,
-        headerLeft: ({ color }) => (
-          <View style={{ padding: 10 }}>
-            <TouchableOpacity onPress={() => {}}>
-              <DrawerLogo color={color} />
-            </TouchableOpacity>
-          </View>
-        ),
+        // headerLeft: ({ color }) => (
+        //   <View style={{ padding: 10 }}>
+        //     <TouchableOpacity onPress={() => {}}>
+        //       <DrawerLogo color={color} />
+        //     </TouchableOpacity>
+        //   </View>
+        // ),
         // drawerIcon: ({ color }) => <DrawerLogo color={color} />,
 
         swipeEdgeWidth: 0,
