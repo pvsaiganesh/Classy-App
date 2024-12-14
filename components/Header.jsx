@@ -167,7 +167,7 @@ const Header = ({ navigation }) => {
           alignItems: "center",
           textAlign: "center",
           justifyContent: "center",
-          paddingBottom: 10,
+          padding: 10,
         }}
       >
         <Col numRows={4}>
