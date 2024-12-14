@@ -6,7 +6,7 @@ const AboutAppScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Ionicons name="arrow-back" size={24} color="#000" />
         </TouchableOpacity>
@@ -14,7 +14,7 @@ const AboutAppScreen = ({ navigation }) => {
         <TouchableOpacity style={styles.cartButton}>
           <Ionicons name="cart-outline" size={24} color="#000" />
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       {/* Content */}
       <ScrollView contentContainerStyle={styles.contentContainer}>

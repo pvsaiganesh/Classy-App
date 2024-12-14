@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
+import CarousalComp from "../../../components/Carousal";
 
 const HomePage = () => {
   return (
@@ -25,9 +26,9 @@ const HomePage = () => {
       {/* <View style={styles.searchBar}>
         <Text style={styles.searchText}>Search...</Text>
       </View> */}
-
+      <CarousalComp />
       {/* Slider Component */}
-      <ScrollView
+      {/* <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.sliderContainer}
@@ -39,8 +40,7 @@ const HomePage = () => {
             style={styles.sliderImage}
           />
         </View>
-        {/* Add more slider items */}
-      </ScrollView>
+      </ScrollView> */}
 
       {/* Explore Section */}
       <View style={styles.exploreSection}>
