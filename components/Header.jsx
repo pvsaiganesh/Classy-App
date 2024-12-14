@@ -105,7 +105,6 @@ const Header = ({ navigation }) => {
       <Row
         style={{
           paddingTop: 50,
-          paddingBottom: 20,
           padding: 10,
           backgroundColor: theme.colors.primaryContainer,
           justifyContent: "center",
@@ -167,15 +166,16 @@ const Header = ({ navigation }) => {
           backgroundColor: theme.colors.primaryContainer,
           alignItems: "center",
           textAlign: "center",
-          justifyContent:"center"
+          justifyContent: "center",
+          paddingBottom: 10,
         }}
       >
         <Col numRows={4}>
-          <View style={{ paddingStart: 10, paddingTop: 20 }}>
+          <View style={{ padding: 10, paddingTop: 10 }}>
             <Avatar.Image
-              size={44}
+              size={34}
               source={require("../assets/images/avatar.png")}
-              style={{ marginBottom: 30 }}
+              style={{ marginBottom: 0 }}
             />
           </View>
         </Col>
@@ -226,6 +226,8 @@ const Header = ({ navigation }) => {
         style={{
           padding: 10,
           paddingTop: 0,
+          paddingBottom: 20,
+
           backgroundColor: theme.colors.primaryContainer,
         }}
       >
