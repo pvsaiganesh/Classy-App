@@ -10,6 +10,8 @@ import {
   Dimensions,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const SearchScreen = () => {
   const [searchText, setSearchText] = useState("");
@@ -47,55 +49,56 @@ const SearchScreen = () => {
 
   return (
     <ScrollView style={styles.container}>
-      {/* Search Bar */}
-      <View style={styles.searchBarContainer}>
-        <Ionicons name="search" size={20} style={styles.searchIcon} />
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Search..."
-          value={searchText}
-          onChangeText={setSearchText}
-          onSubmitEditing={handleSearch}
-        />
-        <Ionicons
-          name="options-outline"
-          size={20}
-          color="#000"
-          style={styles.filterIcon}
-        />
-      </View>
-
-      {/* Search History */}
-      <View style={styles.sectionContainer}>
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Search History</Text>
-          <TouchableOpacity onPress={clearSearchHistory}>
-            <Ionicons name="trash-outline" size={18} color="#E18A07" />
-          </TouchableOpacity>
+      <SafeAreaView>
+        {/* Search Bar */}
+        <View style={styles.searchBarContainer}>
+          <Ionicons name="search" size={20} style={styles.searchIcon} />
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Search..."
+            value={searchText}
+            onChangeText={setSearchText}
+            onSubmitEditing={handleSearch}
+          />
+          <Ionicons
+            name="options-outline"
+            size={20}
+            color="#000"
+            style={styles.filterIcon}
+          />
         </View>
-        <View style={styles.tagsContainer}>
-          {searchHistory.map((item, index) => (
-            <View key={index} style={styles.tag}>
-              <Text style={styles.tagText}>{item}</Text>
-            </View>
-          ))}
-        </View>
-      </View>
 
-      {/* Recommendations */}
-      <View style={styles.sectionContainer}>
-        <Text style={styles.sectionTitle}>Recommendations</Text>
-        <View style={styles.tagsContainer}>
-          {recommendations.map((item, index) => (
-            <View key={index} style={styles.tag}>
-              <Text style={styles.tagText}>{item}</Text>
-            </View>
-          ))}
+        {/* Search History */}
+        <View style={styles.sectionContainer}>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>Search History</Text>
+            <TouchableOpacity onPress={clearSearchHistory}>
+              <Ionicons name="trash-outline" size={18} color="#E18A07" />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.tagsContainer}>
+            {searchHistory.map((item, index) => (
+              <View key={index} style={styles.tag}>
+                <Text style={styles.tagText}>{item}</Text>
+              </View>
+            ))}
+          </View>
         </View>
-      </View>
 
-      {/* Discover */}
-      {/* <View style={styles.sectionContainer}>
+        {/* Recommendations */}
+        <View style={styles.sectionContainer}>
+          <Text style={styles.sectionTitle}>Recommendations</Text>
+          <View style={styles.tagsContainer}>
+            {recommendations.map((item, index) => (
+              <View key={index} style={styles.tag}>
+                <Text style={styles.tagText}>{item}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+
+        {/* Discover */}
+        {/* <View style={styles.sectionContainer}>
         <Text style={styles.sectionTitle}>Discover</Text>
         <FlatList
           data={discoverItems}
@@ -114,6 +117,7 @@ const SearchScreen = () => {
           )}
         />
       </View> */}
+      </SafeAreaView>
     </ScrollView>
   );
 };
