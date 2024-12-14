@@ -165,26 +165,18 @@ const Header = ({ navigation }) => {
       <Row
         style={{
           backgroundColor: theme.colors.primaryContainer,
+          alignItems: "center",
+          textAlign: "center",
+          justifyContent:"center"
         }}
       >
         <Col numRows={4}>
-          <View
-            style={{
-              backgroundColor: theme.colors.primaryContainer,
-              padding: 10,
-
-              textAlign: "start",
-            }}
-          >
-            <Row>
-              <Col numRows={4}>
-                <Avatar.Image
-                  size={24}
-                  source={require("../assets/images/avatar.png")}
-                  style={{ marginBottom: 30 }}
-                />
-              </Col>
-            </Row>
+          <View style={{ paddingStart: 10, paddingTop: 20 }}>
+            <Avatar.Image
+              size={44}
+              source={require("../assets/images/avatar.png")}
+              style={{ marginBottom: 30 }}
+            />
           </View>
         </Col>
         <Col numRows={2}>
@@ -192,7 +184,7 @@ const Header = ({ navigation }) => {
             style={{
               color: theme.colors.onPrimary,
               fontWeight: 600,
-              fontSize: 20,
+              fontSize: 15,
             }}
           >
             Hello Suresh...
@@ -201,7 +193,7 @@ const Header = ({ navigation }) => {
             style={{
               color: theme.colors.onPrimary,
               fontWeight: 600,
-              fontSize: 20,
+              fontSize: 15,
             }}
           >
             Let's Shop and Win
@@ -221,7 +213,7 @@ const Header = ({ navigation }) => {
                 style={{
                   color: theme.colors.onPrimary,
                   fontWeight: 800,
-                  fontSize: 20,
+                  fontSize: 15,
                 }}
               >
                 Address
@@ -233,6 +225,7 @@ const Header = ({ navigation }) => {
       <Row
         style={{
           padding: 10,
+          paddingTop: 0,
           backgroundColor: theme.colors.primaryContainer,
         }}
       >
