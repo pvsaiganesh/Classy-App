@@ -4,8 +4,8 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, View, Dimensions } from "react-native";
 import { theme } from "../app/theme";
 import Logo from "../assets/images/Logo";
-import { Searchbar } from "react-native-paper";
-
+import { Avatar, Searchbar, Text } from "react-native-paper";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 const Col = ({ numRows = 4, children }) => {
   return <View style={styles[`${numRows}col`]}>{children}</View>;
 };
@@ -160,6 +160,74 @@ const Header = ({ navigation }) => {
               <FontAwesome name="shopping-cart" size={24} color="white" />
             </TouchableOpacity>
           </View>
+        </Col>
+      </Row>
+      <Row
+        style={{
+          backgroundColor: theme.colors.primaryContainer,
+        }}
+      >
+        <Col numRows={4}>
+          <View
+            style={{
+              backgroundColor: theme.colors.primaryContainer,
+              padding: 10,
+
+              textAlign: "start",
+            }}
+          >
+            <Row>
+              <Col numRows={4}>
+                <Avatar.Image
+                  size={24}
+                  source={require("../assets/images/avatar.png")}
+                  style={{ marginBottom: 30 }}
+                />
+              </Col>
+            </Row>
+          </View>
+        </Col>
+        <Col numRows={2}>
+          <Text
+            style={{
+              color: theme.colors.onPrimary,
+              fontWeight: 600,
+              fontSize: 20,
+            }}
+          >
+            Hello Suresh...
+          </Text>
+          <Text
+            style={{
+              color: theme.colors.onPrimary,
+              fontWeight: 600,
+              fontSize: 20,
+            }}
+          >
+            Let's Shop and Win
+          </Text>
+        </Col>
+        <Col numRows={4}>
+          <Row>
+            <FontAwesome6 name="location-dot" size={24} color="white" />
+            <View
+              style={{
+                backgroundColor: theme.colors.primaryContainer,
+                padding: 10,
+                textAlign: "end",
+              }}
+            >
+              <Text
+                style={{
+                  color: theme.colors.onPrimary,
+                  fontWeight: 800,
+                  fontSize: 20,
+                }}
+              >
+                Address
+              </Text>
+            </View>
+          </Row>
         </Col>
       </Row>
       <Row
